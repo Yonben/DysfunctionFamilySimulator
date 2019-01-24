@@ -6,8 +6,15 @@ public class ActionableObject : MonoBehaviour
 {
 
     public bool isExplicit;
-    public float stressImpact;
+    public int stressImpact;
     public bool hasGlobalImpact;
+
+    public Sprite idleState;
+    public Sprite needsActionState;
+    public Sprite ActionIcon;
+    private bool isBroken;
+    private bool needsAction;
+
 
     // Start is called before the first frame update
     void Start()
@@ -20,4 +27,6 @@ public class ActionableObject : MonoBehaviour
     {
 
     }
+
+
 }
