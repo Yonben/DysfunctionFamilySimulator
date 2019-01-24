@@ -28,5 +28,15 @@ public class ActionableObject : MonoBehaviour
 
     }
 
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        print(gameObject.name + "triggered with" + other.gameObject.name);
+        PlayableCharacter playableCharacter = other.GetComponent<PlayableCharacter>();
+        if (playableCharacter)
+        {
+            playableCharacter.ApplyStressImpact(0);
+        }
+    }
+
 
 }
