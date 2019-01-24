@@ -11,7 +11,9 @@ public class ActionableObject : MonoBehaviour
 
     public Sprite idleState;
     public Sprite needsActionState;
-    public Sprite ActionIcon;
+    public GameObject ActionIcon;
+
+    private GameObject ActionIconInstance;
     private bool isBroken;
     private bool needsAction;
 
@@ -19,7 +21,7 @@ public class ActionableObject : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        needsAction = true;
     }
 
     // Update is called once per frame
@@ -32,9 +34,20 @@ public class ActionableObject : MonoBehaviour
     {
         print(gameObject.name + "triggered with" + other.gameObject.name);
         PlayableCharacter playableCharacter = other.GetComponent<PlayableCharacter>();
-        if (playableCharacter)
+        if (playableCharacter && needsAction)
         {
-            playableCharacter.ApplyStressImpact(0);
+            var currentPosition = gameObject.transform.position;
+            var iconPosition = new Vector3(currentPosition.x, currentPosition.y + 0.15f, currentPosition.z);
+            ActionIconInstance = (GameObject)Instantiate(ActionIcon, iconPosition, Quaternion.identity);
+            // playableCharacter.ApplyStressImpact(0);
+        }
+    }
+
+    void OnTriggerExit2D(Collider2D other)
+    {
+        if (ActionIconInstance)
+        {
+            Destroy(ActionIconInstance);
         }
     }
 
