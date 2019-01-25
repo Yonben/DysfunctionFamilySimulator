@@ -20,7 +20,7 @@ public class AllButtonsMiniGame : MiniGame
             // Check if pressed
             if (true)
             {
-                numberOfTap--; // Or -4?
+                numberOfTap--;
                 if (numberOfTap <= 0)
                 {
                     EndMiniGame();
