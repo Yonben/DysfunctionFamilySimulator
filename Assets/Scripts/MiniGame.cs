@@ -1,12 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using XboxCtrlrInput;
 
 public abstract class MiniGame : MonoBehaviour
 {
     private ActionableObject actionableObject;
     private PlayableCharacter player;
     private bool isPlaying = false;
+    static Dictionary<XboxButton, string> ButtonAnimations = new Dictionary<XboxButton, string>{
+        {XboxButton.A, "aButton"},
+        {XboxButton.B, "bButton"},
+        {XboxButton.X, "xButton"},
+        {XboxButton.Y, "yButton"},
+    };
 
     void Update()
     {
