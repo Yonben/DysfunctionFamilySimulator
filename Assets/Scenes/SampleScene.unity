@@ -174,7 +174,8 @@ MonoBehaviour:
   hasGlobalImpact: 0
   idleState: {fileID: 0}
   needsActionState: {fileID: 0}
-  ActionIcon: {fileID: 0}
+  ActionIcon: {fileID: 7008239803380715039, guid: 230121f7f3a6346c5a259b50fc07f00d,
+    type: 3}
 --- !u!212 &318579096
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -231,7 +232,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 318579093}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.079, y: 0.054, z: -0.0009630787}
+  m_LocalPosition: {x: -0.324, y: 0.023, z: -0.0009630787}
   m_LocalScale: {x: 1, y: 0.991, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -361,6 +362,7 @@ GameObject:
   - component: {fileID: 1346502400}
   - component: {fileID: 1346502399}
   - component: {fileID: 1346502398}
+  - component: {fileID: 1346502403}
   - component: {fileID: 1346502402}
   m_Layer: 0
   m_Name: Player
@@ -482,7 +484,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 0.0001
+  m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
@@ -491,3 +493,16 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1346502403
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1346502397}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c616598dc0c200d4cb0af0957b149593, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 1

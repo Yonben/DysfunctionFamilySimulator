@@ -30,6 +30,11 @@ public class ActionableObject : MonoBehaviour
 
     }
 
+    void needUpdate()
+    {
+
+    }
+
     void OnTriggerEnter2D(Collider2D other)
     {
         print(gameObject.name + "triggered with" + other.gameObject.name);
