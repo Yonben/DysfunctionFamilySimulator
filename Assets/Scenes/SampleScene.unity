@@ -124,6 +124,7 @@ GameObject:
   - component: {fileID: 318579096}
   - component: {fileID: 318579095}
   - component: {fileID: 318579094}
+  - component: {fileID: 318579098}
   m_Layer: 0
   m_Name: Actionable Object
   m_TagString: Untagged
@@ -176,6 +177,7 @@ MonoBehaviour:
   needsActionState: {fileID: 0}
   ActionIcon: {fileID: 7008239803380715039, guid: 230121f7f3a6346c5a259b50fc07f00d,
     type: 3}
+  MiniGameScript: {fileID: 318579098}
 --- !u!212 &318579096
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -238,6 +240,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &318579098
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 318579093}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba513ed50102f44208e7909f7bf1288c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &369405131
 GameObject:
   m_ObjectHideFlags: 0

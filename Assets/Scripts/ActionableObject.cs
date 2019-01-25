@@ -13,7 +13,9 @@ public class ActionableObject : MonoBehaviour
     public Sprite needsActionState;
     public GameObject ActionIcon;
 
-    public MiniGame MiniGame;
+    public MiniGame MiniGameScript;
+
+    private PlayableCharacter playableCharacter;
 
     private GameObject ActionIconInstance;
     private bool isBroken;
@@ -39,10 +41,21 @@ public class ActionableObject : MonoBehaviour
 
     }
 
+    void OnActionPress()
+    {
+        MiniGameScript.StartMiniGame(this, playableCharacter);
+    }
+
+    public void OnMiniGameSuccess()
+    {
+        // Reset Actionable state
+        needsAction = false;
+    }
+
     void OnTriggerEnter2D(Collider2D other)
     {
         print(gameObject.name + "triggered with" + other.gameObject.name);
-        PlayableCharacter playableCharacter = other.GetComponent<PlayableCharacter>();
+        playableCharacter = other.GetComponent<PlayableCharacter>();
         if (playableCharacter && needsAction)
         {
             var currentPosition = gameObject.transform.position;

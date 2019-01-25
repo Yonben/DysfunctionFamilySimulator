@@ -2,17 +2,29 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PatternMiniGame : MonoBehaviour
+public class PatternMiniGame : MiniGame
 {
-    // Start is called before the first frame update
+    public enum buttons { A, B, C, D };
+    public List<buttons> buttonsPattern;
+    private buttons buttonToPress;
+    private int currentKeyToPress;
+
     void Start()
     {
-        
+
     }
 
-    // Update is called once per frame
-    void Update()
+    public override void PlayGame()
     {
-        
+        if (true)
+        { // Check if the currentKeyToPress is pressed
+            if (buttonsPattern.Count == 0)
+            {
+                EndMiniGame();
+                return;
+            }
+            buttonToPress = buttonsPattern[0];
+            buttonsPattern.RemoveAt(0);
+        }
     }
 }
