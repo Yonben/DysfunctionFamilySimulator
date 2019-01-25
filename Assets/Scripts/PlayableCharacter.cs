@@ -7,6 +7,7 @@ public class PlayableCharacter : MonoBehaviour
 
     [SerializeField] [Range(0, 100)] private int stress;
     [Range(0, 100)] private int stressMinThresholds;
+    public PlayerController PlayerController;
 
     public void ApplyStressImpact(int stressImpact)
     {
@@ -14,17 +15,6 @@ public class PlayableCharacter : MonoBehaviour
         print("ApplyStressImpact");
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
 
     void OnTriggerEnter2D(Collider2D other)
     {
