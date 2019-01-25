@@ -1,24 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!95 &2454721009756689857
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1098302914617785623}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: eb213432a49dbb34f8fcc84f72698baa, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!70 &6251913696479558203
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -35,6 +16,25 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 1}
   m_Size: {x: 14, y: 6}
   m_Direction: 1
+--- !u!95 &2454721009756689857
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1098302914617785623}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 22100000, guid: 966a6f2aed5575345a484b29cce8af06, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &8751489857338185526
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -42,16 +42,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 8524888613199161889, guid: e784c84914829354998cbdc5b45744c1,
-        type: 3}
-      propertyPath: m_Name
-      value: Mum Variant
-      objectReference: {fileID: 0}
-    - target: {fileID: 8524888612772202308, guid: e784c84914829354998cbdc5b45744c1,
-        type: 3}
-      propertyPath: PlayerController
-      value: 
-      objectReference: {fileID: 1098302914617785618}
     - target: {fileID: 0}
       propertyPath: m_SpriteTilingProperty.border.x
       value: 0
@@ -84,6 +74,16 @@ PrefabInstance:
       propertyPath: m_Size.y
       value: 35
       objectReference: {fileID: 0}
+    - target: {fileID: 8524888613199161889, guid: e784c84914829354998cbdc5b45744c1,
+        type: 3}
+      propertyPath: m_Name
+      value: Mum Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 8524888612772202308, guid: e784c84914829354998cbdc5b45744c1,
+        type: 3}
+      propertyPath: PlayerController
+      value: 
+      objectReference: {fileID: 1098302914617785618}
     - target: {fileID: 8524888613199161892, guid: e784c84914829354998cbdc5b45744c1,
         type: 3}
       propertyPath: controller

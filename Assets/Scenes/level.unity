@@ -327,7 +327,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 216665004}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 36, y: -54.5, z: 0}
+  m_LocalPosition: {x: 36, y: -57, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 55152555}
@@ -380,7 +380,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
+  m_SpriteSortPoint: 1
 --- !u!1 &333936189
 GameObject:
   m_ObjectHideFlags: 0
@@ -1801,9 +1801,9 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 12.948181, y: -5.198082}
-      - {x: 5.8460236, y: 5.8214417}
-      - {x: -6.1021423, y: 1.8754025}
+    - - {x: 16.187866, y: -0.4883442}
+      - {x: -0.4861145, y: 9.353747}
+      - {x: -5.368637, y: 0.1116333}
       - {x: -3.7439117, y: -2.9701805}
 --- !u!1 &1970853907
 GameObject:
@@ -2042,7 +2042,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2091639209}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 46.5, y: -51.5, z: 0}
+  m_LocalPosition: {x: 46.5, y: -53, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 55152555}
