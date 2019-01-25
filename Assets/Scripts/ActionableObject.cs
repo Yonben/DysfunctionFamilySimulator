@@ -41,11 +41,6 @@ public class ActionableObject : MonoBehaviour
 
     }
 
-    void OnActionPress()
-    {
-        MiniGameScript.StartMiniGame(this, playableCharacter);
-    }
-
     public void OnMiniGameSuccess()
     {
         // Reset Actionable state
@@ -58,15 +53,13 @@ public class ActionableObject : MonoBehaviour
         playableCharacter = other.GetComponent<PlayableCharacter>();
         if (playableCharacter && needsAction)
         {
-            var currentPosition = gameObject.transform.position;
-            var iconPosition = new Vector3(currentPosition.x, currentPosition.y + 0.15f, currentPosition.z);
-            ActionIconInstance = (GameObject)Instantiate(ActionIcon, iconPosition, Quaternion.identity);
-            // playableCharacter.ApplyStressImpact(0);
+            MiniGameScript.StartMiniGame(this, playableCharacter);
         }
     }
 
     void OnTriggerExit2D(Collider2D other)
     {
+
         if (ActionIconInstance)
         {
             Destroy(ActionIconInstance);

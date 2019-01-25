@@ -1,22 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using XboxCtrlrInput;
 
 public class PatternMiniGame : MiniGame
 {
-    public enum buttons { A, B, C, D };
-    public List<buttons> buttonsPattern;
-    private buttons buttonToPress;
-    private int currentKeyToPress;
-
-    void Start()
-    {
-
-    }
+    public List<XboxButton> buttonsPattern;
+    private XboxButton buttonToPress;
 
     public override void PlayGame()
     {
-        if (true)
+        if (XCI.GetButtonDown(buttonToPress))
         { // Check if the currentKeyToPress is pressed
             if (buttonsPattern.Count == 0)
             {
