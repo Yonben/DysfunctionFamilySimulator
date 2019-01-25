@@ -11,7 +11,7 @@ public class ActionableObject : MonoBehaviour
 
     public Sprite idleState;
     public Sprite needsActionState;
-    public GameObject ActionIcon;
+    public Sprite ActionIcon;
 
     public MiniGame MiniGameScript;
 
