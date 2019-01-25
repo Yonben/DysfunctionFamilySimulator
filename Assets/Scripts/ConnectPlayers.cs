@@ -18,9 +18,9 @@ public class ConnectPlayers : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        for (int i = 0; i < 4; ++i)
+        foreach (int index in notConnectedIndicies)
         {
-            PlayerIndex testPlayerIndex = (PlayerIndex)i;
+            PlayerIndex testPlayerIndex = (PlayerIndex)index;
             GamePadState testState = GamePad.GetState(testPlayerIndex);
             if (testState.IsConnected)
             {
@@ -28,15 +28,16 @@ public class ConnectPlayers : MonoBehaviour
 //                Debug.Log(string.Format("GamePad found {0}", testPlayerIndex));
                 playerIndex = testPlayerIndex;
 
-                int listIndex = notConnectedIndicies[0];
+                print(index);
+                print(GameManager.instance.players.Count);
                 notConnectedIndicies.RemoveAt(0);
-                GameManager.instance.players[listIndex].PlayerController.SetPlayerIndex(playerIndex);
+                GameManager.instance.players[index].PlayerController.SetPlayerIndex(playerIndex);
             }
         }
         
         if (notConnectedIndicies.Count == 0)
         {
-            //end connect players
+            //todo end connect players
         }
     }
 }
