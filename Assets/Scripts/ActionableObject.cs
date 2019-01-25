@@ -8,25 +8,22 @@ public class ActionableObject : MonoBehaviour
     public bool isExplicit;
     public int stressImpact;
     public bool hasGlobalImpact;
+    public Transform PatternButtonPos;
 
     public Sprite idleState;
     public Sprite needsActionState;
-    public Sprite ActionIcon;
 
     public MiniGame MiniGameScript;
 
     private PlayableCharacter playableCharacter;
 
-    private GameObject ActionIconInstance;
     private bool isBroken;
-    private bool needsAction;
-
-    private float timeLeftBeforeNeed;
+    private bool needsAction = true;
 
     // Start is called before the first frame update
     void Start()
     {
-        Invoke("NeedUpdate", 5f);
+        PatternButtonPos = this.gameObject.transform.GetChild(0);
     }
 
     // Check whether needsAction should be turned on and if yes, turns it on.
@@ -45,7 +42,6 @@ public class ActionableObject : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        print(gameObject.name + "triggered with" + other.gameObject.name);
         playableCharacter = other.GetComponent<PlayableCharacter>();
         if (playableCharacter && needsAction)
         {
@@ -59,11 +55,7 @@ public class ActionableObject : MonoBehaviour
 
     void OnTriggerExit2D(Collider2D other)
     {
-
-        if (ActionIconInstance)
-        {
-            Destroy(ActionIconInstance);
-        }
+        MiniGameScript.EndMiniGame();
     }
 
 
