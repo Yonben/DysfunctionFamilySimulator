@@ -18,6 +18,8 @@ public class PlayableCharacter : MonoBehaviour
 
     [SerializeField] private Slider stressSlider;
 
+    public GameManager.PlayerType PlayerType;
+
     private void Awake()
     {
         PlayerController = GetComponent<PlayerController>();

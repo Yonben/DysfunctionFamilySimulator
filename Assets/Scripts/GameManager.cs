@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
+	public enum PlayerType {Dad, Mum, Kid, Dog}
+	
 	public static GameManager instance = null;
 
 	public List<PlayableCharacter> players;
