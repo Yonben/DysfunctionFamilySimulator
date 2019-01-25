@@ -11,10 +11,21 @@ public class PlayableCharacter : MonoBehaviour
     [Range(0, 100)] private int stressMinThresholds;
     [SerializeField] private int maxStress = 100; 
     private PlayerController PlayerController;
+    
+    private Rigidbody2D m_Rigidbody2D;
+    private Animator m_animator;
 
     private void Awake()
     {
         PlayerController = GetComponent<PlayerController>();
+        
+        m_Rigidbody2D = GetComponent<Rigidbody2D>();
+        m_animator = GetComponent<Animator>();
+    }
+
+    private void Update()
+    {
+        m_animator.SetFloat("velocity", m_Rigidbody2D.velocity.magnitude);
     }
 
     public void ApplyStressImpact(int stressImpact)
@@ -50,7 +61,6 @@ public class PlayableCharacter : MonoBehaviour
     
     private void enabledControl(bool enable=true)
     {
-        KeyValuePair<int, int> valuePair = new KeyValuePair<int, int>(1,1);
         enabledMovement(enable);
         //todo - also enable buttons.
     }
