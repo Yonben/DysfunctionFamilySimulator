@@ -7,6 +7,8 @@ using XboxCtrlrInput;
 
 public class PlayerController : MonoBehaviour
 {
+	private const float JOYSTICK_THRESHOLD = 0.1f;
+	
 	public XboxController controller;
 
 	[SerializeField] private float maxMovementVelocity;
@@ -49,11 +51,24 @@ public class PlayerController : MonoBehaviour
 	{
 		float axisX = XCI.GetAxis(XboxAxis.LeftStickX, controller);
 		float axisY = XCI.GetAxis(XboxAxis.LeftStickY, controller);
+		if (Math.Abs(axisX) < JOYSTICK_THRESHOLD)
+		{
+			axisX = 0;
+		}
+		if (Math.Abs(axisY) < JOYSTICK_THRESHOLD)
+		{
+			axisY = 0;
+		}
 		movementHorizontal = axisX;
 		movementVertical = axisY;
 
 		float targetHorizontalVelocity = movementHorizontal * maxMovementVelocity;
 		if (targetHorizontalVelocity != 0)
 			_spriteRenderer.flipX = targetHorizontalVelocity < 0;
+	}
+
+	public bool isTryMoove()
+	{
+		return Math.Abs(movementHorizontal) > JOYSTICK_THRESHOLD || Math.Abs(movementVertical) > JOYSTICK_THRESHOLD;
 	}
 }

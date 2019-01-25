@@ -74,4 +74,17 @@ public class PlayableCharacter : MonoBehaviour
         enabledMovement(enable);
         //todo - also enable buttons.
     }
+
+    private void disableMovement()
+    {
+        enabledMovement(false);
+        StartCoroutine(nameof(enableMovement));
+        
+    }
+    
+    IEnumerator enableMovement() 
+    {
+        yield return new WaitUntil(() => PlayerController.isTryMoove());
+        enabledMovement(true);
+    }
 }
