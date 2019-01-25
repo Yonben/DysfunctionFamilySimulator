@@ -6,7 +6,19 @@ using XboxCtrlrInput;
 public class PatternMiniGame : MiniGame
 {
     public List<XboxButton> buttonsPattern;
-    private XboxButton buttonToPress;
+    private XboxButton buttonToPress = XboxButton.B;
+
+    void Start()
+    {
+        GetNextButtonToPress();
+        print("Button to press: " + buttonToPress);
+    }
+
+    private void GetNextButtonToPress()
+    {
+        buttonToPress = buttonsPattern[0];
+        buttonsPattern.RemoveAt(0);
+    }
 
     public override void PlayGame()
     {
@@ -14,11 +26,12 @@ public class PatternMiniGame : MiniGame
         { // Check if the currentKeyToPress is pressed
             if (buttonsPattern.Count == 0)
             {
-                EndMiniGame();
+                EndMiniGame(miniGameSuccess: true);
                 return;
             }
-            buttonToPress = buttonsPattern[0];
-            buttonsPattern.RemoveAt(0);
+            GetNextButtonToPress();
+            print("Button to press: " + buttonToPress);
+
         }
     }
 }

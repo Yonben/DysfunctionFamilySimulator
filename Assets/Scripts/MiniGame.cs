@@ -21,7 +21,7 @@ public abstract class MiniGame : MonoBehaviour
         actionableObject = actionable;
         player = initiator;
         isPlaying = true;
-        EndMiniGame();
+        // EndMiniGame();
     }
 
     public abstract void PlayGame();
