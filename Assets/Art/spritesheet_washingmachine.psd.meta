@@ -1,10 +1,15 @@
 fileFormatVersion: 2
-guid: 534504e981a5063409dfbd1423f5b2c0
+guid: 3f1192e57cc1d1040b48db24136d95de
 TextureImporter:
   fileIDToRecycleName:
-    21300000: spritesheet_fridge_0
-    21300002: spritesheet_fridge_1
-    21300004: spritesheet_fridge_2
+    21300000: spritesheet_washingmachine_0
+    21300002: spritesheet_washingmachine_1
+    21300004: spritesheet_washingmachine_2
+    21300006: spritesheet_washingmachine_3
+    21300008: spritesheet_washingmachine_4
+    21300010: spritesheet_washingmachine_5
+    21300012: spritesheet_washingmachine_6
+    21300014: spritesheet_washingmachine_7
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -109,61 +114,161 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: spritesheet_fridge_0
+      name: spritesheet_washingmachine_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 294
+        width: 49
+        height: 98
+      alignment: 9
+      pivot: {x: 0.5, y: 0.060913704}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d31ef5b2023dc44ca28e8123fe557ad
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_washingmachine_1
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 294
+        width: 49
+        height: 98
+      alignment: 9
+      pivot: {x: 0.5, y: 0.060913704}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 832f4c37b0e55c94cb5945195bf4a745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_washingmachine_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 196
+        width: 49
+        height: 98
+      alignment: 9
+      pivot: {x: 0.5, y: 0.060913704}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e10c8065fb016864498322780c474da9
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_washingmachine_3
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 196
+        width: 49
+        height: 98
+      alignment: 9
+      pivot: {x: 0.5, y: 0.060913704}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13b7ad7c4efbbe84e902601102306cdd
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_washingmachine_4
       rect:
         serializedVersion: 2
         x: 0
         y: 98
-        width: 98
+        width: 49
         height: 98
       alignment: 9
-      pivot: {x: 0.40816328, y: 0.091836736}
+      pivot: {x: 0.5, y: 0.060913704}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d340dd948c2266b45b4f619b8aa08edf
+      spriteID: 7d42e9f75d7b7e24ca5e8aff33d70c00
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheet_fridge_1
+      name: spritesheet_washingmachine_5
       rect:
         serializedVersion: 2
-        x: 98
+        x: 49
         y: 98
-        width: 98
+        width: 49
         height: 98
       alignment: 9
-      pivot: {x: 0.40816328, y: 0.091836736}
+      pivot: {x: 0.5, y: 0.060913704}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5040a1576ad5ee741a0d059a2338db71
+      spriteID: bb570346f0a101242bf0119d77681f53
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheet_fridge_2
+      name: spritesheet_washingmachine_6
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 98
+        width: 49
         height: 98
       alignment: 9
-      pivot: {x: 0.40816328, y: 0.091836736}
+      pivot: {x: 0.5, y: 0.060913704}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f45729f46e83d27478bea518d2458a03
+      spriteID: 39437ef1f36c2bb4994fe692b78b65ee
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_washingmachine_7
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 0
+        width: 49
+        height: 98
+      alignment: 9
+      pivot: {x: 0.5, y: 0.060913704}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9ea65acc5c56a647b64bb1b41afcead
       vertices: []
       indices: 
       edges: []
@@ -171,7 +276,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: f18d9b09b7491db4392504a973d2c9bf
+    spriteID: 32b6fe592b6e71e41969477e96245292
     vertices: []
     indices: 
     edges: []

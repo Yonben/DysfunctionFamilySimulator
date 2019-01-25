@@ -19,8 +19,8 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!58 &8907356825434521908
-CircleCollider2D:
+--- !u!70 &6936362092102885895
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -32,9 +32,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 12
+  m_Offset: {x: 0, y: 1}
+  m_Size: {x: 22, y: 6}
+  m_Direction: 1
 --- !u!1001 &8291475709275195119
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -52,36 +52,6 @@ PrefabInstance:
       propertyPath: PlayerController
       value: 
       objectReference: {fileID: 387098723053923531}
-    - target: {fileID: 8524888613199161890, guid: e784c84914829354998cbdc5b45744c1,
-        type: 3}
-      propertyPath: m_SpriteTilingProperty.border.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8524888613199161890, guid: e784c84914829354998cbdc5b45744c1,
-        type: 3}
-      propertyPath: m_SpriteTilingProperty.border.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8524888613199161890, guid: e784c84914829354998cbdc5b45744c1,
-        type: 3}
-      propertyPath: m_SpriteTilingProperty.border.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8524888613199161890, guid: e784c84914829354998cbdc5b45744c1,
-        type: 3}
-      propertyPath: m_SpriteTilingProperty.border.w
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8524888613199161890, guid: e784c84914829354998cbdc5b45744c1,
-        type: 3}
-      propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 29
-      objectReference: {fileID: 0}
-    - target: {fileID: 8524888613199161890, guid: e784c84914829354998cbdc5b45744c1,
-        type: 3}
-      propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 19
-      objectReference: {fileID: 0}
     - target: {fileID: 8524888613199161892, guid: e784c84914829354998cbdc5b45744c1,
         type: 3}
       propertyPath: controller
@@ -147,6 +117,36 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8524888613199161890, guid: e784c84914829354998cbdc5b45744c1,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.border.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8524888613199161890, guid: e784c84914829354998cbdc5b45744c1,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.border.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8524888613199161890, guid: e784c84914829354998cbdc5b45744c1,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.border.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8524888613199161890, guid: e784c84914829354998cbdc5b45744c1,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.border.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8524888613199161890, guid: e784c84914829354998cbdc5b45744c1,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 29
+      objectReference: {fileID: 0}
+    - target: {fileID: 8524888613199161890, guid: e784c84914829354998cbdc5b45744c1,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 19
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8524888613199161890, guid: e784c84914829354998cbdc5b45744c1, type: 3}
