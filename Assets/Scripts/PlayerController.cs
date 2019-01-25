@@ -1,33 +1,65 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using XInputDotNetPure;
 
 public class PlayerController : MonoBehaviour
 {
-    public float speed;             //Floating point variable to store the player's movement speed.
+	public enum Button {A,B,X,Y}
+	
+	PlayerIndex playerIndex;
+	GamePadState state;
+	GamePadState prevState;
 
-    private Rigidbody2D rb2d;       //Store a reference to the Rigidbody2D component required to use 2D Physics.
+	public void SetPlayerIndex(PlayerIndex playerIndex)
+	{
+		this.playerIndex = playerIndex;
+		Debug.Log("player get index" + this.playerIndex.ToString());
+	}
 
-    // Use this for initialization
-    void Start()
-    {
-        //Get and store a reference to the Rigidbody2D component so that we can access it.
-        rb2d = GetComponent<Rigidbody2D>();
-    }
+	private void Update()
+	{
+		prevState = state;
+		state = GamePad.GetState(playerIndex);
+	}
 
-    //FixedUpdate is called at a fixed interval and is independent of frame rate. Put physics code here.
-    void FixedUpdate()
-    {
-        //Store the current horizontal input in the float moveHorizontal.
-        float moveHorizontal = Input.GetAxis("Horizontal");
+	public bool isPressedThisFrame(Button button)
+	{
+		return getStateButton(prevState, button) == ButtonState.Released &&
+		       getStateButton(state, button) == ButtonState.Pressed;
+	}
+	
+	public bool isReleasedThisFrame(Button button)
+	{
+		return getStateButton(prevState, button) == ButtonState.Pressed &&
+		       getStateButton(state, button) == ButtonState.Released;
+	}
 
-        //Store the current vertical input in the float moveVertical.
-        float moveVertical = Input.GetAxis("Vertical");
+	public float getLeftStickHorizontal()
+	{
+		return state.ThumbSticks.Left.X;
+	}
+	
+	public float getLeftStickVertical()
+	{
+		return state.ThumbSticks.Left.Y;
+	}
 
-        //Use the two store floats to create a new Vector2 variable movement.
-        Vector2 movement = new Vector2(moveHorizontal, moveVertical);
-
-        //Call the AddForce function of our Rigidbody2D rb2d supplying movement multiplied by speed to move our player.
-        rb2d.AddForce(movement * speed);
-    }
+	private ButtonState getStateButton(GamePadState state, Button button)
+	{
+		switch (button)
+		{
+			case Button.A:
+				return state.Buttons.A;
+			case Button.B:
+				return state.Buttons.B;
+			case Button.X:
+				return state.Buttons.X;
+			case Button.Y:
+				return state.Buttons.Y;
+			default:
+				throw new ArgumentOutOfRangeException(nameof(button), button, null);
+		}
+	}
 }
