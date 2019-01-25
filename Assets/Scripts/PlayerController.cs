@@ -13,7 +13,7 @@ public class PlayerController : MonoBehaviour
 	[SerializeField] private float movementForce;
 
 	private Rigidbody2D m_Rigidbody2D;
-	private Transform _transform;
+	private SpriteRenderer _spriteRenderer;
 	private float movementHorizontal, movementVertical;
 
 	internal bool canMove = true;
@@ -21,7 +21,7 @@ public class PlayerController : MonoBehaviour
 	private void Awake()
 	{
 		m_Rigidbody2D = GetComponent<Rigidbody2D>();
-		_transform = transform;
+		_spriteRenderer = GetComponent<SpriteRenderer>();
 	}
 
 	private void FixedUpdate()
@@ -54,6 +54,6 @@ public class PlayerController : MonoBehaviour
 
 		float targetHorizontalVelocity = movementHorizontal * maxMovementVelocity;
 		if (targetHorizontalVelocity != 0)
-			_transform.localScale = new Vector3(targetHorizontalVelocity > 0 ? 1 : -1, 1, 1);
+			_spriteRenderer.flipX = targetHorizontalVelocity < 0;
 	}
 }
