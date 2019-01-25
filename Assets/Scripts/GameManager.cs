@@ -1,12 +1,29 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
 	public static GameManager instance = null;
 
 	public List<PlayableCharacter> players;
+
+	private int playerAliveCount;
+
+	[SerializeField] private Text GameOverText;
+	[SerializeField] private Text ScoreText;
+
+	private int score = 0;
+	public int Score
+	{
+		get { return score; }
+		set
+		{
+			score = value;
+			ScoreText.text = score.ToString();
+		}
+	}
 
 	private void Awake()
 	{
@@ -19,6 +36,22 @@ public class GameManager : MonoBehaviour
 			Destroy(gameObject);      
 		//Sets this to not be destroyed when reloading scene
 		DontDestroyOnLoad(gameObject);
-		
+
+
+		playerAliveCount = players.Count;
+		GameOverText.enabled = false;
+		Score = 0;
 	}
+
+
+	public void PlayerDie(PlayableCharacter player)
+	{
+		playerAliveCount--;
+		if (playerAliveCount <= 0)
+		{
+			//todo
+			GameOverText.enabled = true;
+		}
+	}
+	
 }

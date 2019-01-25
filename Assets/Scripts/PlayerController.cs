@@ -15,6 +15,8 @@ public class PlayerController : MonoBehaviour
 	private Rigidbody2D m_Rigidbody2D;
 	private float movementHorizontal, movementVertical;
 
+	internal bool canMove = true;
+
 	private void Awake()
 	{
 		m_Rigidbody2D = GetComponent<Rigidbody2D>();
@@ -22,7 +24,8 @@ public class PlayerController : MonoBehaviour
 
 	private void FixedUpdate()
 	{
-		move();
+		if (canMove)
+			move();
 	}
 
 	private void move()
