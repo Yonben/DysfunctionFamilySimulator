@@ -47,7 +47,7 @@ public class GameManager : MonoBehaviour
 	public void PlayerDie(PlayableCharacter player)
 	{
 		playerAliveCount--;
-		if (playerAliveCount <= 0)
+		if (playerAliveCount <= 1) //1 because of the dog that can't die
 		{
 			//todo
 			GameOverText.enabled = true;
