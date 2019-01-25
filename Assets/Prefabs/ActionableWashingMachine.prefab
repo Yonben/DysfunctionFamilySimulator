@@ -1,5 +1,35 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4867768303030511848
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1700656956969416448}
+  m_Layer: 0
+  m_Name: PatternButtonPos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1700656956969416448
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4867768303030511848}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 12.41, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6789041258257831893}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6789041258257831888
 GameObject:
   m_ObjectHideFlags: 0
@@ -30,7 +60,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -46.07, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 1700656956969416448}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -99,7 +130,6 @@ MonoBehaviour:
   hasGlobalImpact: 0
   idleState: {fileID: 21300000, guid: 47dea5985c60731428486c0bb622a74c, type: 3}
   needsActionState: {fileID: 21300000, guid: c3d5ae7dc27e8a74193e67ce5a8831f7, type: 3}
-  ActionIcon: {fileID: 21300000, guid: 35194bb976466174baa8c049ba1f62bf, type: 3}
   MiniGameScript: {fileID: 6789041258257831889}
 --- !u!114 &6789041258257831889
 MonoBehaviour:
@@ -113,6 +143,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba513ed50102f44208e7909f7bf1288c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PatternButton: {fileID: 3033633977078091288, guid: 14892a38e41384e53844deed7134760d,
+    type: 3}
   buttonsPattern: 0000000001000000020000000300000001000000
 --- !u!60 &3360600746523134884
 PolygonCollider2D:

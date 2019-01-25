@@ -6,31 +6,50 @@ using XboxCtrlrInput;
 public class PatternMiniGame : MiniGame
 {
     public List<XboxButton> buttonsPattern;
-    private XboxButton buttonToPress = XboxButton.B;
+    private int currentButtonIndex;
+    private XboxButton buttonToPress;
+    private GameObject buttonInstance;
+    private Animator PatternButtonAnim;
+    [SerializeField] private Transform t;
 
-    void Start()
+    public override void StartMiniGame(ActionableObject actionable, PlayableCharacter initiator)
     {
+        base.StartMiniGame(actionable, initiator);
+        var actionableButtonPos = actionableObject.PatternButtonPos.position;
+        buttonInstance = (GameObject)Instantiate(PatternButton, actionableButtonPos, Quaternion.identity);
+        PatternButtonAnim = buttonInstance.GetComponent<Animator>();
         GetNextButtonToPress();
-        print("Button to press: " + buttonToPress);
     }
 
     private void GetNextButtonToPress()
     {
-        buttonToPress = buttonsPattern[0];
-        buttonsPattern.RemoveAt(0);
+        buttonToPress = buttonsPattern[currentButtonIndex];
+        PatternButtonAnim.SetTrigger(MiniGame.ButtonAnimations[buttonToPress]);
+    }
+
+    public override void EndMiniGame(bool miniGameSuccess = false)
+    {
+        base.EndMiniGame(miniGameSuccess);
+
+        currentButtonIndex = 0;
+        if (buttonInstance)
+        {
+            Destroy(buttonInstance);
+        }
     }
 
     public override void PlayGame()
     {
         if (XCI.GetButtonDown(buttonToPress))
         { // Check if the currentKeyToPress is pressed
-            if (buttonsPattern.Count == 0)
+            if (currentButtonIndex == buttonsPattern.Count - 1)
             {
+                currentButtonIndex = 0;
                 EndMiniGame(miniGameSuccess: true);
                 return;
             }
+            currentButtonIndex++;
             GetNextButtonToPress();
-            print("Button to press: " + buttonToPress);
 
         }
     }
