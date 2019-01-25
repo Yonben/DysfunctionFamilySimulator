@@ -8,6 +8,7 @@ TextureImporter:
     21300006: spritesheet_mum_3
     21300008: spritesheet_mum_4
     21300010: spritesheet_mum_5
+    21300012: spritesheet_mum_6
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -126,7 +127,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8637de8620ca1b64180da6e70bc0a3e1
+      spriteID: 4370f1ac734f35f44ba3dde90336233b
       vertices: []
       indices: 
       edges: []
@@ -146,7 +147,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 92d648e0fe9cf0c479229f3be2b41b96
+      spriteID: 2f2387730fc22d140aa2f7ceeac3eacc
       vertices: []
       indices: 
       edges: []
@@ -166,7 +167,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 82480fdeeedb9d3438d4f6b88868893a
+      spriteID: 03fe2ff203dbdd849afd3c3502e2787a
       vertices: []
       indices: 
       edges: []
@@ -186,7 +187,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9f341d65a97e7ea46871c881949121f8
+      spriteID: 3d21c3cfe396ea94da244a00548f214f
       vertices: []
       indices: 
       edges: []
@@ -206,7 +207,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 76495be7287055a49b768bebc0e6c44a
+      spriteID: 8f6a1ff10b24002498680f51012f4223
       vertices: []
       indices: 
       edges: []
@@ -226,7 +227,27 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8ff634bf7173edf41879f8ab77096ea6
+      spriteID: 0698d16c11a85da4f9f0431a4df87ab5
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_mum_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 49
+        height: 49
+      alignment: 9
+      pivot: {x: 0.5, y: 0.020408163}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77b2874fb2e809347ad97d6a96505d5c
       vertices: []
       indices: 
       edges: []
