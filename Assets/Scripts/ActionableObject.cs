@@ -9,6 +9,7 @@ public class ActionableObject : MonoBehaviour
     public int stressImpact;
     public bool hasGlobalImpact;
     public Transform PatternButtonPos;
+    public List<GameManager.PlayerType> ApplicableCharacters;
 
     public Sprite idleState;
     public Sprite needsActionState;
@@ -18,7 +19,6 @@ public class ActionableObject : MonoBehaviour
     private PlayableCharacter playableCharacter;
 
     private bool isBroken;
-    private bool needsAction = true;
 
     // Start is called before the first frame update
     void Start()
@@ -26,29 +26,22 @@ public class ActionableObject : MonoBehaviour
         PatternButtonPos = this.gameObject.transform.GetChild(0);
     }
 
-    // Check whether needsAction should be turned on and if yes, turns it on.
-    void NeedUpdate()
-    {
-        needsAction = true;
-        print("Need !!");
-    }
-
-    public void OnMiniGameSuccess()
+    public void OnMiniGameSuccess(GameManager.PlayerType playerType)
     {
         // Reset Actionable state
-        needsAction = false;
-        Invoke("NeedUpdate", 5f);
+        ApplicableCharacters.Remove(playerType);
+    }
+
+    public void AddApplicableCharacter(GameManager.PlayerType playerType)
+    {
+        ApplicableCharacters.Add(playerType);
     }
 
     void OnTriggerEnter2D(Collider2D other)
     {
         playableCharacter = other.GetComponent<PlayableCharacter>();
-        if (playableCharacter && needsAction)
+        if (playableCharacter && ApplicableCharacters.Contains(playableCharacter.PlayerType))
         {
-            // var currentPosition = gameObject.transform.position;
-            // var iconPosition = new Vector3(currentPosition.x, currentPosition.y + 0.15f, currentPosition.z);
-            // ActionIconInstance = Instantiate(ActionIcon, iconPosition, Quaternion.identity);
-
             MiniGameScript.StartMiniGame(this, playableCharacter);
         }
     }

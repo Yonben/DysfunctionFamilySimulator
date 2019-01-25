@@ -37,10 +37,8 @@ public class PlayableCharacter : MonoBehaviour
 
     public void ApplyStressImpact(int stressImpact)
     {
-        print("Before stress: " + stress);
         stress += stressImpact;
         stress = Mathf.Max(stress, stressMinThresholds);
-        print("ApplyStressImpact: " + stress);
 
         stressSlider.value = (float)(stress) / (float)maxStress;
 

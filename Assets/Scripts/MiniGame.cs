@@ -44,10 +44,10 @@ public abstract class MiniGame : MonoBehaviour
         // If we succeeded the mini game, end the minigame, call success on actionable and apply stress impact
         // Otherwise (like if player walks away) only end the minigame itself
         isPlaying = false;
-        print("Ending minigame");
+
         if (miniGameSuccess)
         {
-            actionableObject.OnMiniGameSuccess();
+            actionableObject.OnMiniGameSuccess(player.PlayerType);
             player.ApplyStressImpact(actionableObject.stressImpact);
         }
     }

@@ -6,6 +6,7 @@ using XboxCtrlrInput;
 public class PatternMiniGame : MiniGame
 {
     public List<XboxButton> buttonsPattern;
+
     private int currentButtonIndex;
     private XboxButton buttonToPress;
     private GameObject buttonInstance;
