@@ -31,6 +31,7 @@ public abstract class MiniGame : MonoBehaviour
 
     public virtual void StartMiniGame(ActionableObject actionable, PlayableCharacter initiator)
     {
+        print("Start parent game");
         actionableObject = actionable;
         player = initiator;
         isPlaying = true;
