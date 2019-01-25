@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
 	[SerializeField] private float movementForce;
 
 	private Rigidbody2D m_Rigidbody2D;
+	private Transform _transform;
 	private float movementHorizontal, movementVertical;
 
 	internal bool canMove = true;
@@ -20,6 +21,7 @@ public class PlayerController : MonoBehaviour
 	private void Awake()
 	{
 		m_Rigidbody2D = GetComponent<Rigidbody2D>();
+		_transform = transform;
 	}
 
 	private void FixedUpdate()
@@ -49,5 +51,9 @@ public class PlayerController : MonoBehaviour
 		float axisY = XCI.GetAxis(XboxAxis.LeftStickY, controller);
 		movementHorizontal = axisX;
 		movementVertical = axisY;
+
+		float targetHorizontalVelocity = movementHorizontal * maxMovementVelocity;
+		if (targetHorizontalVelocity != 0)
+			_transform.localScale = new Vector3(targetHorizontalVelocity > 0 ? 1 : -1, 1, 1);
 	}
 }
