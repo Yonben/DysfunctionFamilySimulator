@@ -14,11 +14,4 @@ public class PlayableCharacter : MonoBehaviour
         stress += stressImpact;
         print("ApplyStressImpact");
     }
-
-
-    void OnTriggerEnter2D(Collider2D other)
-    {
-        print(gameObject.name + "triggered with" + other.gameObject.name);
-
-    }
 }
