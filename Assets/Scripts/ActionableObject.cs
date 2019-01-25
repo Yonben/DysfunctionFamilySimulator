@@ -13,6 +13,8 @@ public class ActionableObject : MonoBehaviour
     public Sprite needsActionState;
     public GameObject ActionIcon;
 
+    public MiniGame MiniGame;
+
     private GameObject ActionIconInstance;
     private bool isBroken;
     private bool needsAction;
@@ -27,10 +29,12 @@ public class ActionableObject : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        NeedUpdate();
 
     }
 
-    void needUpdate()
+    // Check whether needsAction should be turned on and if yes, turns it on.
+    void NeedUpdate()
     {
 
     }
