@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Analytics;
+using UnityEngine.UI;
 
 [RequireComponent(typeof(PlayerController))]
 public class PlayableCharacter : MonoBehaviour
@@ -15,12 +16,16 @@ public class PlayableCharacter : MonoBehaviour
     private Rigidbody2D m_Rigidbody2D;
     private Animator m_animator;
 
+    [SerializeField] private Slider stressSlider;
+
     private void Awake()
     {
         PlayerController = GetComponent<PlayerController>();
         
         m_Rigidbody2D = GetComponent<Rigidbody2D>();
         m_animator = GetComponent<Animator>();
+        
+        stressSlider.value = (float) (stress) / (float)maxStress;
     }
 
     private void Update()
@@ -33,6 +38,8 @@ public class PlayableCharacter : MonoBehaviour
         stress += stressImpact;
         stress = Mathf.Max(stress, stressMinThresholds);
         print("ApplyStressImpact");
+
+        stressSlider.value = (float) (stress) / (float)maxStress;
 
         if (stress >= maxStress)
         {
