@@ -1,5 +1,40 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!95 &5187719033078846667
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 387098723053923534}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e18a62105c161034fbe0a578fdd7cd06, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!58 &8907356825434521908
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 387098723053923534}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 12
 --- !u!1001 &8291475709275195119
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12,6 +47,52 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dog Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 8524888612772202308, guid: e784c84914829354998cbdc5b45744c1,
+        type: 3}
+      propertyPath: PlayerController
+      value: 
+      objectReference: {fileID: 387098723053923531}
+    - target: {fileID: 8524888613199161890, guid: e784c84914829354998cbdc5b45744c1,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.border.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8524888613199161890, guid: e784c84914829354998cbdc5b45744c1,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.border.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8524888613199161890, guid: e784c84914829354998cbdc5b45744c1,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.border.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8524888613199161890, guid: e784c84914829354998cbdc5b45744c1,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.border.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8524888613199161890, guid: e784c84914829354998cbdc5b45744c1,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 29
+      objectReference: {fileID: 0}
+    - target: {fileID: 8524888613199161890, guid: e784c84914829354998cbdc5b45744c1,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 19
+      objectReference: {fileID: 0}
+    - target: {fileID: 8524888613199161892, guid: e784c84914829354998cbdc5b45744c1,
+        type: 3}
+      propertyPath: controller
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8524888613199161893, guid: e784c84914829354998cbdc5b45744c1,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 679843584988d3a41baccc993fed405c,
+        type: 3}
     - target: {fileID: 8524888613199161894, guid: e784c84914829354998cbdc5b45744c1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -67,61 +148,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8524888613199161893, guid: e784c84914829354998cbdc5b45744c1,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: beed13955c4d2884795a9cbdd51fd84f,
-        type: 3}
-    - target: {fileID: 8524888612772202308, guid: e784c84914829354998cbdc5b45744c1,
-        type: 3}
-      propertyPath: PlayerController
-      value: 
-      objectReference: {fileID: 387098723053923531}
-    - target: {fileID: 8524888613199161892, guid: e784c84914829354998cbdc5b45744c1,
-        type: 3}
-      propertyPath: controller
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 8524888613199161890, guid: e784c84914829354998cbdc5b45744c1,
-        type: 3}
-      propertyPath: m_SpriteTilingProperty.border.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8524888613199161890, guid: e784c84914829354998cbdc5b45744c1,
-        type: 3}
-      propertyPath: m_SpriteTilingProperty.border.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8524888613199161890, guid: e784c84914829354998cbdc5b45744c1,
-        type: 3}
-      propertyPath: m_SpriteTilingProperty.border.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8524888613199161890, guid: e784c84914829354998cbdc5b45744c1,
-        type: 3}
-      propertyPath: m_SpriteTilingProperty.border.w
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8524888613199161890, guid: e784c84914829354998cbdc5b45744c1,
-        type: 3}
-      propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 29
-      objectReference: {fileID: 0}
-    - target: {fileID: 8524888613199161890, guid: e784c84914829354998cbdc5b45744c1,
-        type: 3}
-      propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 19
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8524888613199161890, guid: e784c84914829354998cbdc5b45744c1, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: e784c84914829354998cbdc5b45744c1, type: 3}
+--- !u!1 &387098723053923534 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8524888613199161889, guid: e784c84914829354998cbdc5b45744c1,
+    type: 3}
+  m_PrefabInstance: {fileID: 8291475709275195119}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &387098723053923531 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8524888613199161892, guid: e784c84914829354998cbdc5b45744c1,
     type: 3}
   m_PrefabInstance: {fileID: 8291475709275195119}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 387098723053923534}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c616598dc0c200d4cb0af0957b149593, type: 3}
