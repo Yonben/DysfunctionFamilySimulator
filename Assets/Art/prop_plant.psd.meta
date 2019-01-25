@@ -1,9 +1,7 @@
 fileFormatVersion: 2
-guid: d4758ba8d551d5d4c93f566714ef58a7
+guid: 15ff3683e21dad5408120fee186657cb
 TextureImporter:
-  fileIDToRecycleName:
-    21300000: spritesheet_couch_0
-    21300002: spritesheet_couch_1
+  fileIDToRecycleName: {}
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -42,11 +40,11 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
-  alignment: 0
-  spritePivot: {x: 0.5, y: 0.5}
+  alignment: 9
+  spritePivot: {x: 0.5, y: 0.08163265}
   spritePixelsToUnits: 1
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
@@ -106,51 +104,11 @@ TextureImporter:
     androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: spritesheet_couch_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 98
-        height: 98
-      alignment: 9
-      pivot: {x: 0.5, y: 0.26530612}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: aed2b58d2c3b5c44eabfc30affdcf4d4
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: spritesheet_couch_1
-      rect:
-        serializedVersion: 2
-        x: 98
-        y: 0
-        width: 98
-        height: 98
-      alignment: 9
-      pivot: {x: 0.5, y: 0.26530612}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d852d8a4e13be5c49a80496a30a38761
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 6daa732e9aaf9014d82605f4c91499fe
+    spriteID: 067133670d1da5d4e9fd8563d84b88a4
     vertices: []
     indices: 
     edges: []
