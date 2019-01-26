@@ -68,7 +68,7 @@ public class PatternMiniGame : MiniGame
 
     public override void PlayGame()
     {
-        if (XCI.GetButtonDown(buttonToPress))
+        if (XCI.GetButtonDown(buttonToPress, player.PlayerController.controller))
         {
             if (stepsNumber == 0 && infiniteStepsNumber > 0)
             {

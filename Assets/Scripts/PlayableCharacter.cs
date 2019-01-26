@@ -67,6 +67,7 @@ public class PlayableCharacter : MonoBehaviour
 
     public void enabledMovement(bool enable = true)
     {
+        m_Rigidbody2D.bodyType = enable ? RigidbodyType2D.Dynamic : RigidbodyType2D.Static;
         PlayerController.canMove = enable;
     }
 
