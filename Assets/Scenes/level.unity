@@ -2138,7 +2138,7 @@ PrefabInstance:
     - target: {fileID: 6378146045476021247, guid: 8e1f23742592da549b9e90ff599d4ec2,
         type: 3}
       propertyPath: m_Name
-      value: Dog (1)
+      value: Dog
       objectReference: {fileID: 0}
     - target: {fileID: 781265915181276592, guid: 8e1f23742592da549b9e90ff599d4ec2,
         type: 3}
@@ -2210,6 +2210,11 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7215693996376987000, guid: 8e1f23742592da549b9e90ff599d4ec2,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: a643d12a956055f438b04610ac4d71eb, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8e1f23742592da549b9e90ff599d4ec2, type: 3}
 --- !u!1 &1330598819
