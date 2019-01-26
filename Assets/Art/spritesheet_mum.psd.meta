@@ -9,6 +9,7 @@ TextureImporter:
     21300008: spritesheet_mum_4
     21300010: spritesheet_mum_5
     21300012: spritesheet_mum_6
+    21300014: spritesheet_mum_7
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -127,7 +128,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4370f1ac734f35f44ba3dde90336233b
+      spriteID: 5fb8ed1064b40fd4785f5b9c56231a8d
       vertices: []
       indices: 
       edges: []
@@ -147,7 +148,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2f2387730fc22d140aa2f7ceeac3eacc
+      spriteID: b8c79ad578c63004b861ce0ff0e41bd8
       vertices: []
       indices: 
       edges: []
@@ -167,7 +168,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 03fe2ff203dbdd849afd3c3502e2787a
+      spriteID: a449eb106afb33a4489d89559478bc34
       vertices: []
       indices: 
       edges: []
@@ -187,7 +188,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3d21c3cfe396ea94da244a00548f214f
+      spriteID: 7c63a1615bd5b884c9a706542bae73bc
       vertices: []
       indices: 
       edges: []
@@ -207,7 +208,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8f6a1ff10b24002498680f51012f4223
+      spriteID: c41b1880b572e86438ca52523326e384
       vertices: []
       indices: 
       edges: []
@@ -227,7 +228,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0698d16c11a85da4f9f0431a4df87ab5
+      spriteID: 07097a2720f319044a1e03405eb0240e
       vertices: []
       indices: 
       edges: []
@@ -247,7 +248,27 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 77b2874fb2e809347ad97d6a96505d5c
+      spriteID: e83daff2a5c267240ae4692a36a14fdc
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_mum_7
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 0
+        width: 49
+        height: 49
+      alignment: 9
+      pivot: {x: 0.5, y: 0.020408163}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7310bc9bc0aac447bc08189589b445b
       vertices: []
       indices: 
       edges: []
