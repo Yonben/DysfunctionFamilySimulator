@@ -10,6 +10,7 @@ public class ActionableObject : MonoBehaviour
     public bool hasGlobalImpact;
     public Transform PatternButtonPos;
     public Transform CharPos;
+    public bool CharFacingRight = true;
     public List<GameManager.PlayerType> ApplicableCharacters;
 
     public Sprite idleState;
@@ -52,6 +53,12 @@ public class ActionableObject : MonoBehaviour
         playableCharacter = other.GetComponent<PlayableCharacter>();
         if (playableCharacter && ApplicableCharacters.Contains(playableCharacter.PlayerType))
         {
+            if (CharPos)
+            {
+                playableCharacter.disableMovement();
+                playableCharacter.transform.position = CharPos.position;
+                playableCharacter.PlayerController.isRight = CharFacingRight;
+            }
             MiniGameScript.StartMiniGame(this, playableCharacter);
         }
     }

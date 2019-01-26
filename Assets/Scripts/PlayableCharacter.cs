@@ -11,7 +11,7 @@ public class PlayableCharacter : MonoBehaviour
     [SerializeField] [Range(0, 100)] private int stress;
     [Range(0, 100)] private int stressMinThresholds;
     [SerializeField] private int maxStress = 100;
-    private PlayerController PlayerController;
+    [HideInInspector] public PlayerController PlayerController;
 
     private Rigidbody2D m_Rigidbody2D;
     private Animator m_animator;
@@ -63,7 +63,7 @@ public class PlayableCharacter : MonoBehaviour
         GameManager.instance.PlayerDie(this);
     }
 
-    public void enabledMovement(bool enable = true)
+    private void enabledMovement(bool enable = true)
     {
         PlayerController.canMove = enable;
     }
@@ -74,7 +74,7 @@ public class PlayableCharacter : MonoBehaviour
         //todo - also enable buttons.
     }
 
-    private void disableMovement()
+    public void disableMovement()
     {
         enabledMovement(false);
         StartCoroutine(nameof(enableMovement));
@@ -83,6 +83,7 @@ public class PlayableCharacter : MonoBehaviour
     
     IEnumerator enableMovement() 
     {
+        yield return new WaitForSeconds(0.1f);
         yield return new WaitUntil(() => PlayerController.isTryMoove());
         enabledMovement(true);
     }
