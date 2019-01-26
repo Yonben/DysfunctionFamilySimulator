@@ -20,6 +20,8 @@ public class PlayerController : MonoBehaviour
 
 	internal bool canMove = true;
 
+	public bool isRight = true;
+
 	private void Awake()
 	{
 		m_Rigidbody2D = GetComponent<Rigidbody2D>();
@@ -64,7 +66,10 @@ public class PlayerController : MonoBehaviour
 
 		float targetHorizontalVelocity = movementHorizontal * maxMovementVelocity;
 		if (targetHorizontalVelocity != 0)
-			_spriteRenderer.flipX = targetHorizontalVelocity < 0;
+		{
+			isRight = targetHorizontalVelocity > 0;
+			_spriteRenderer.flipX = !isRight;
+		}
 	}
 
 	public bool isTryMoove()

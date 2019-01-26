@@ -50,6 +50,7 @@ public class PlayableCharacter : MonoBehaviour
 
     private void Die()
     {
+        print("player die, " + gameObject.name);
         //lock stress??
 
         //remove the player visually with animation
