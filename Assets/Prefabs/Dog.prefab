@@ -257,6 +257,8 @@ GameObject:
   - component: {fileID: 5702132828329603313}
   - component: {fileID: 9076012367049062726}
   - component: {fileID: 7215693996376987000}
+  - component: {fileID: 4017614465058288734}
+  - component: {fileID: 4086264592786547105}
   m_Layer: 0
   m_Name: Dog
   m_TagString: Untagged
@@ -414,6 +416,36 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &4017614465058288734
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6378146045476021247}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67bab4ca4ff211e4f8f7c0986cc14b2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stressToReduce: -5
+  timeToEachReducedStress: 1
+--- !u!70 &4086264592786547105
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6378146045476021247}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.5, y: 5}
+  m_Size: {x: 75, y: 50}
+  m_Direction: 1
 --- !u!1 &6725713741698316793
 GameObject:
   m_ObjectHideFlags: 0
