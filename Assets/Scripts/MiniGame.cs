@@ -7,7 +7,7 @@ public abstract class MiniGame : MonoBehaviour
 {
     public GameObject PatternButton;
     protected ActionableObject actionableObject;
-    private PlayableCharacter player;
+    protected PlayableCharacter player;
     private bool isPlaying = false;
 
     protected static Dictionary<XboxButton, string> ButtonAnimations = new Dictionary<XboxButton, string>{
