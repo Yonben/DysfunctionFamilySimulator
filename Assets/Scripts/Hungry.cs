@@ -5,7 +5,8 @@ using UnityEngine;
 
 public class Hungry : IndependentPenaltyBehviour
 {
-    [Range(1, 10)] public float maxTimeToBeHungry;
+    public float maxTimeToBeHungry;
+    public float minTimeToBeHungry;
     [SerializeField] private ActionableObject _actionableObject;
 
     private void Awake()
@@ -22,7 +23,7 @@ public class Hungry : IndependentPenaltyBehviour
 
     private void HungerTimer()
     {
-        Invoke("BecomeHungry", Random.Range(1f, maxTimeToBeHungry));
+        Invoke("BecomeHungry", Random.Range(minTimeToBeHungry, maxTimeToBeHungry));
     }
 
     private void BecomeHungry()
