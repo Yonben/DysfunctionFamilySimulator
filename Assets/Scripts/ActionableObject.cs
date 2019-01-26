@@ -25,11 +25,12 @@ public class ActionableObject : MonoBehaviour
 
     public MiniGame MiniGameScript;
 
-    private PlayableCharacter playableCharacter;
+//    private PlayableCharacter playableCharacter;
 
     private bool isBroken;
 
     [SerializeField] private bool removeAllPlayer;
+
 
     private Dictionary<GameManager.PlayerType, IndependentPenaltyBehviour> _independentPenaltyBehvioursMap =
         new Dictionary<GameManager.PlayerType, IndependentPenaltyBehviour>();
@@ -100,26 +101,38 @@ public class ActionableObject : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D other)
     {
+        if (MiniGameScript.inMiniGame)
+            return;
         PlayableCharacter playableCharacter_temp = other.GetComponent<PlayableCharacter>();
         if (playableCharacter_temp && ApplicableCharacters.Contains(playableCharacter_temp.PlayerType))
         {
-            if (XCI.GetButtonDown(XboxButton.A, playableCharacter.PlayerController.controller))
+            if (XCI.GetButtonDown(XboxButton.A, playableCharacter_temp.PlayerController.controller))
             {
                 if (CharPos)
                 {
                     playableCharacter_temp.disableMovement();
                     playableCharacter_temp.transform.position = CharPos.position;
                     playableCharacter_temp.PlayerController.isRight = CharFacingRight;
+                    stickTime = Time.fixedTime;
                 }
+                print("here");
 
                 MiniGameScript.StartMiniGame(this, playableCharacter_temp);
+                print("enter");
             }
         }
         
     }
 
+
+
+    private float stickTime;
+
     void OnTriggerExit2D(Collider2D other)
     {
+        if (Time.fixedTime - stickTime < 0.5f)
+            return;
+        print("trigger exit");
         PlayableCharacter playableCharacter_temp = other.GetComponent<PlayableCharacter>();
         if (playableCharacter_temp && ApplicableCharacters.Contains(playableCharacter_temp.PlayerType))
         {

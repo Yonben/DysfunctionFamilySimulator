@@ -18,6 +18,8 @@ public abstract class MiniGame : MonoBehaviour
     protected PlayableCharacter player;
     private bool isPlaying = false;
 
+    [HideInInspector] public bool inMiniGame = false;
+
     public static Dictionary<XboxButton, string> ButtonAnimations = new Dictionary<XboxButton, string>{
         {XboxButton.A, "aButton"},
         {XboxButton.B, "bButton"},
@@ -44,6 +46,7 @@ public abstract class MiniGame : MonoBehaviour
 
     public virtual void StartMiniGame(ActionableObject actionable, PlayableCharacter initiator)
     {
+        inMiniGame = true;
         print("Start parent game");
         actionableObject = actionable;
         player = initiator;
@@ -72,6 +75,8 @@ public abstract class MiniGame : MonoBehaviour
 
     public virtual void EndMiniGame(bool miniGameSuccess = false)
     {
+        inMiniGame = false;
+        
         // If we succeeded the mini game, end the minigame, call success on actionable and apply stress impact
         // Otherwise (like if player walks away) only end the minigame itself
         isPlaying = false;
