@@ -20,6 +20,8 @@ public class ActionableObject : MonoBehaviour
 
     private bool isBroken;
 
+    private IndependentPenaltyBehviour _independentPenaltyBehviour;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -29,12 +31,19 @@ public class ActionableObject : MonoBehaviour
     public void OnMiniGameSuccess(GameManager.PlayerType playerType)
     {
         // Reset Actionable state
+        _independentPenaltyBehviour.Off();
         ApplicableCharacters.Remove(playerType);
     }
 
     public void AddApplicableCharacter(GameManager.PlayerType playerType)
     {
         ApplicableCharacters.Add(playerType);
+    }
+    
+    public void AddApplicableCharacter(GameManager.PlayerType playerType, IndependentPenaltyBehviour independentPenaltyBehviour)
+    {
+        AddApplicableCharacter(playerType);
+        _independentPenaltyBehviour = independentPenaltyBehviour;
     }
 
     void OnTriggerEnter2D(Collider2D other)
