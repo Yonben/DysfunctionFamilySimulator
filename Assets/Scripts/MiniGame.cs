@@ -11,6 +11,8 @@ public abstract class MiniGame : MonoBehaviour
     public string objectAnimationExit;
     public string playerAnimationEnter;
     public string playerAnimationExit;
+    public bool objectAnimationEntered;
+    public bool playerAnimationEntered;
     
     protected ActionableObject actionableObject;
     protected PlayableCharacter player;
@@ -49,11 +51,13 @@ public abstract class MiniGame : MonoBehaviour
         
         if (!objectAnimationEnter.Equals(""))
         {
+            objectAnimationEntered = true;
             _animator.SetTrigger(objectAnimationEnter);
         }
                 
         if (!playerAnimationEnter.Equals(""))
         {
+            playerAnimationEntered = true;
             player.m_animator.SetTrigger(playerAnimationEnter);
         }
 
@@ -78,14 +82,16 @@ public abstract class MiniGame : MonoBehaviour
             player.ApplyStressImpact(actionableObject.stressImpact);
         }
         
-        if (!objectAnimationExit.Equals(""))
+        if (!objectAnimationExit.Equals("") && objectAnimationEntered)
         {
             _animator.SetTrigger(objectAnimationExit);
+            objectAnimationEntered = false;
         }
                 
-        if (!playerAnimationExit.Equals(""))
+        if (!playerAnimationExit.Equals("") && playerAnimationEntered)
         {
             player.m_animator.SetTrigger(playerAnimationExit);
+            playerAnimationEntered = false;
         }
         
         if (desapireInEnter)
