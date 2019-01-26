@@ -103,10 +103,8 @@ public class ActionableObject : MonoBehaviour
         playableCharacter = other.GetComponent<PlayableCharacter>();
         if (playableCharacter && ApplicableCharacters.Contains(playableCharacter.PlayerType))
         {
-            if (XCI.GetButtonDown(XboxButton.A))
+            if (XCI.GetButtonDown(XboxButton.A)) //todo - here problem
             {
-                
-                
                 if (CharPos)
                 {
                     playableCharacter.disableMovement();
