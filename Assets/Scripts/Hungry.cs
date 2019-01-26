@@ -28,8 +28,10 @@ public class Hungry : IndependentPenaltyBehviour
 
     private void BecomeHungry()
     {
+
         print("Became Hungry");
         IsOn = true;
+
         _actionableObject.AddApplicableCharacter(player.PlayerType, this);
         StartCoroutine(nameof(TakePenalty));
     }

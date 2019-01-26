@@ -32,10 +32,17 @@ public class Smelly : IndependentPenaltyBehviour
 			{
 				distance = 0;
 				IsOn = true;
+
 				_actionableObject.AddApplicableCharacter(player.PlayerType, this);
 				StartCoroutine(nameof(TakePenalty));
 			}
 		}
 		lastPosition = position;
 	}
+
+    public override void Off()
+    {
+        base.Off();
+
+    }
 }

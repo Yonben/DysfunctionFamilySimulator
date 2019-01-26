@@ -9,7 +9,21 @@ public abstract class IndependentPenaltyBehviour : MonoBehaviour
     [SerializeField] private int penalty;
     [SerializeField] private float penaltyTimeRate;
 
-    protected bool IsOn = false;
+
+
+    private bool isOn = false;
+
+    public bool IsOn {
+        get
+        {
+            return isOn;
+        }
+        set
+        {
+            isOn = value;
+
+        }
+    }
 
     protected virtual void Awake()
     {

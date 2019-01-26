@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour
 
 	public List<PlayableCharacter> players;
 
-	private int playerAliveCount;
+	public int playerAliveCount;
 
 	[SerializeField] private Text GameOverText;
 	[SerializeField] private GameObject GameOverGO;
