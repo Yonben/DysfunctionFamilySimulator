@@ -756,7 +756,7 @@ MonoBehaviour:
   buttonsPattern: 030000000100000000000000020000000300000001000000000000000200000003000000010000000000000002000000
   isRandom: 0
   stepsNumber: 0
-  infiniteStepsNumber: 5
+  infiniteStepsNumber: 0
   t: {fileID: 0}
   scoreToAdd: 0
 --- !u!1 &434041534
@@ -890,7 +890,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &698682058
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1460,6 +1460,11 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 5763820029754208774, guid: dc5661be747ae7a44853a52754e99fdb,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dc5661be747ae7a44853a52754e99fdb, type: 3}
 --- !u!1 &982875622
@@ -1650,6 +1655,16 @@ PrefabInstance:
         type: 3}
       propertyPath: stepsNumber
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6789041258257831889, guid: f91b88110c0134e38aaec3c0e6a6e88c,
+        type: 3}
+      propertyPath: objectAnimationEnter
+      value: start
+      objectReference: {fileID: 0}
+    - target: {fileID: 6789041258257831889, guid: f91b88110c0134e38aaec3c0e6a6e88c,
+        type: 3}
+      propertyPath: objectAnimationExit
+      value: finish
       objectReference: {fileID: 0}
     - target: {fileID: 3360600746523134884, guid: f91b88110c0134e38aaec3c0e6a6e88c,
         type: 3}
@@ -3388,6 +3403,11 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1098302914617785618, guid: adb11c4a6cc9d18479cbccca90be7d84,
+        type: 3}
+      propertyPath: controller
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8624463863346336685, guid: adb11c4a6cc9d18479cbccca90be7d84,
         type: 3}
       propertyPath: m_Color.r
@@ -3402,11 +3422,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Color.b
       value: 0.6156863
-      objectReference: {fileID: 0}
-    - target: {fileID: 1098302914617785618, guid: adb11c4a6cc9d18479cbccca90be7d84,
-        type: 3}
-      propertyPath: controller
-      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: adb11c4a6cc9d18479cbccca90be7d84, type: 3}
@@ -3675,7 +3690,7 @@ MonoBehaviour:
   buttonsPattern: 02000000020000000200000002000000020000000200000002000000020000000200000002000000
   isRandom: 0
   stepsNumber: 0
-  infiniteStepsNumber: 5
+  infiniteStepsNumber: 0
   t: {fileID: 0}
   scoreToAdd: 0
 --- !u!114 &1969727454
