@@ -59,6 +59,7 @@ public abstract class MiniGame : MonoBehaviour
 
         if (desapireInEnter)
         {
+            player.enabledMovement(false);
             player.spriteRenderer.enabled = false;
         }
     }
@@ -89,6 +90,7 @@ public abstract class MiniGame : MonoBehaviour
         
         if (desapireInEnter)
         {
+            player.enabledMovement(true);
             player.spriteRenderer.enabled = true;
         }
     }

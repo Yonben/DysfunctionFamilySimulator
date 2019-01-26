@@ -65,7 +65,7 @@ public class PlayableCharacter : MonoBehaviour
         GameManager.instance.PlayerDie(this);
     }
 
-    private void enabledMovement(bool enable = true)
+    public void enabledMovement(bool enable = true)
     {
         PlayerController.canMove = enable;
     }
