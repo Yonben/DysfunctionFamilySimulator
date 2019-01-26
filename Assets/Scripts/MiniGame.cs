@@ -49,13 +49,13 @@ public abstract class MiniGame : MonoBehaviour
         player = initiator;
         isPlaying = true;
         
-        if (!objectAnimationEnter.Equals(""))
+        if (!objectAnimationEnter.Equals("") && !objectAnimationEntered)
         {
             objectAnimationEntered = true;
             _animator.SetTrigger(objectAnimationEnter);
         }
                 
-        if (!playerAnimationEnter.Equals(""))
+        if (!playerAnimationEnter.Equals("") && !playerAnimationEntered)
         {
             playerAnimationEntered = true;
             player.m_animator.SetTrigger(playerAnimationEnter);
