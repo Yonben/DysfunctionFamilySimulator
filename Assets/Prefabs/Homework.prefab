@@ -159,14 +159,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isExplicit: 0
-  stressImpact: 0
+  stressImpact: 2
   hasGlobalImpact: 0
   PatternButtonPos: {fileID: 2110312930}
   CharPos: {fileID: 0}
+  CharFacingRight: 1
   ApplicableCharacters: 02000000
   idleState: {fileID: 0}
   needsActionState: {fileID: 0}
   MiniGameScript: {fileID: 3909136171646213482}
+  removeAllPlayer: 0
 --- !u!114 &3909136171646213482
 MonoBehaviour:
   m_ObjectHideFlags: 0

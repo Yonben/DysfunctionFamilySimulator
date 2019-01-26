@@ -22,7 +22,11 @@ public class ActionableObject : MonoBehaviour
 
     private bool isBroken;
 
-    private IndependentPenaltyBehviour _independentPenaltyBehviour;
+    [SerializeField] private bool removeAllPlayer;
+
+    private Dictionary<GameManager.PlayerType, IndependentPenaltyBehviour> _independentPenaltyBehvioursMap =
+        new Dictionary<GameManager.PlayerType, IndependentPenaltyBehviour>();
+//    private IndependentPenaltyBehviour _independentPenaltyBehviour;
 
     // Start is called before the first frame update
     void Start()
@@ -33,8 +37,22 @@ public class ActionableObject : MonoBehaviour
     {
         // Reset Actionable state
         print("OnMiniGameSuccess");
-        _independentPenaltyBehviour.Off();
+//        _independentPenaltyBehviour.Off();
+        
         ApplicableCharacters.Remove(playerType);
+        if (removeAllPlayer)
+        {
+            foreach (var key in _independentPenaltyBehvioursMap.Keys)
+            {
+                _independentPenaltyBehvioursMap[key].Off();
+                _independentPenaltyBehvioursMap.Remove(key);
+            }
+        }
+        else
+        {
+            _independentPenaltyBehvioursMap[playerType].Off();
+            _independentPenaltyBehvioursMap.Remove(playerType);
+        }
     }
 
     public void AddApplicableCharacter(GameManager.PlayerType playerType)
@@ -45,7 +63,8 @@ public class ActionableObject : MonoBehaviour
     public void AddApplicableCharacter(GameManager.PlayerType playerType, IndependentPenaltyBehviour independentPenaltyBehviour)
     {
         AddApplicableCharacter(playerType);
-        _independentPenaltyBehviour = independentPenaltyBehviour;
+        _independentPenaltyBehvioursMap.Add(playerType, independentPenaltyBehviour);
+//        _independentPenaltyBehviour = independentPenaltyBehviour;
     }
 
     void OnTriggerEnter2D(Collider2D other)

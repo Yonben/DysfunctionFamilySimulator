@@ -415,6 +415,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stress: 0
   maxStress: 100
+  PlayerController: {fileID: 0}
   stressSlider: {fileID: 4867930332954069640}
   PlayerType: 0
 --- !u!114 &8524888613199161892
@@ -432,6 +433,7 @@ MonoBehaviour:
   controller: 1
   maxMovementVelocity: 200
   movementForce: 2000
+  isRight: 1
 --- !u!50 &8524888613199161891
 Rigidbody2D:
   serializedVersion: 4
@@ -481,8 +483,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f0065de6bbe442cead6a1cb34190900, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  penalty: 0
-  penaltyTimeRate: 0
-  timeToBeHungry: 0
-  distanceToBeSmelly: 0
+  penalty: 1
+  penaltyTimeRate: 1
+  maxTimeToBeHungry: 20
+  minTimeToBeHungry: 10
   _actionableObject: {fileID: 0}
