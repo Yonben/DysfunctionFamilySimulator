@@ -266,16 +266,6 @@ PrefabInstance:
       propertyPath: _actionableObject
       value: 
       objectReference: {fileID: 1892651509}
-    - target: {fileID: 4783575123097386056, guid: 4f4139a1115877a43ac8f74ab441b2f5,
-        type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4783575123097386056, guid: 4f4139a1115877a43ac8f74ab441b2f5,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6678920942084410363, guid: 4f4139a1115877a43ac8f74ab441b2f5,
         type: 3}
       propertyPath: m_Color.r
@@ -290,6 +280,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Color.b
       value: 0.25490198
+      objectReference: {fileID: 0}
+    - target: {fileID: 4783575123097386056, guid: 4f4139a1115877a43ac8f74ab441b2f5,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4783575123097386056, guid: 4f4139a1115877a43ac8f74ab441b2f5,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4f4139a1115877a43ac8f74ab441b2f5, type: 3}
@@ -1245,16 +1245,6 @@ PrefabInstance:
       propertyPath: m_Size.y
       value: 35
       objectReference: {fileID: 0}
-    - target: {fileID: 8998650881251798888, guid: dc5661be747ae7a44853a52754e99fdb,
-        type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8998650881251798888, guid: dc5661be747ae7a44853a52754e99fdb,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1927244723590821477, guid: dc5661be747ae7a44853a52754e99fdb,
         type: 3}
       propertyPath: m_SpriteSortPoint
@@ -1294,6 +1284,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8998650881251798888, guid: dc5661be747ae7a44853a52754e99fdb,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8998650881251798888, guid: dc5661be747ae7a44853a52754e99fdb,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4594934092924853893, guid: dc5661be747ae7a44853a52754e99fdb,
         type: 3}
@@ -1576,6 +1576,12 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: -15
       objectReference: {fileID: 0}
+    - target: {fileID: 6789041258257831890, guid: f91b88110c0134e38aaec3c0e6a6e88c,
+        type: 3}
+      propertyPath: PatternButton
+      value: 
+      objectReference: {fileID: 3033633977078091288, guid: 14892a38e41384e53844deed7134760d,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f91b88110c0134e38aaec3c0e6a6e88c, type: 3}
 --- !u!4 &1189150364 stripped
@@ -1989,11 +1995,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4178012438447214574, guid: 8e1f23742592da549b9e90ff599d4ec2,
-        type: 3}
-      propertyPath: controller
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3040299972572189314, guid: 8e1f23742592da549b9e90ff599d4ec2,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -2003,6 +2004,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4178012438447214574, guid: 8e1f23742592da549b9e90ff599d4ec2,
+        type: 3}
+      propertyPath: controller
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1871690235708903880, guid: 8e1f23742592da549b9e90ff599d4ec2,
         type: 3}
@@ -2408,6 +2414,12 @@ PrefabInstance:
       propertyPath: CharPos
       value: 
       objectReference: {fileID: 1467118820}
+    - target: {fileID: 2240601145565124142, guid: 9e86680bd2558bc40a35fc8d7b4d2871,
+        type: 3}
+      propertyPath: PatternButton
+      value: 
+      objectReference: {fileID: 3033633977078091288, guid: 14892a38e41384e53844deed7134760d,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9e86680bd2558bc40a35fc8d7b4d2871, type: 3}
 --- !u!1 &1475074580
@@ -2842,16 +2854,6 @@ PrefabInstance:
       propertyPath: _actionableObject
       value: 
       objectReference: {fileID: 1892651509}
-    - target: {fileID: 7593815811860800542, guid: adb11c4a6cc9d18479cbccca90be7d84,
-        type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7593815811860800542, guid: adb11c4a6cc9d18479cbccca90be7d84,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8624463863346336685, guid: adb11c4a6cc9d18479cbccca90be7d84,
         type: 3}
       propertyPath: m_Color.r
@@ -2866,6 +2868,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Color.b
       value: 0.6156863
+      objectReference: {fileID: 0}
+    - target: {fileID: 7593815811860800542, guid: adb11c4a6cc9d18479cbccca90be7d84,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7593815811860800542, guid: adb11c4a6cc9d18479cbccca90be7d84,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: adb11c4a6cc9d18479cbccca90be7d84, type: 3}
@@ -3293,6 +3305,12 @@ PrefabInstance:
       propertyPath: CharFacingRight
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8243336854724505431, guid: 1101e4dc1bb444d4999a64034faf8daa,
+        type: 3}
+      propertyPath: PatternButton
+      value: 
+      objectReference: {fileID: 3033633977078091288, guid: 14892a38e41384e53844deed7134760d,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1101e4dc1bb444d4999a64034faf8daa, type: 3}
 --- !u!1 &2087241073
@@ -3617,6 +3635,12 @@ PrefabInstance:
       propertyPath: CharPos
       value: 
       objectReference: {fileID: 1085990245}
+    - target: {fileID: 7082421509064110862, guid: c8c80883aeb56d34daaff7d245c7e888,
+        type: 3}
+      propertyPath: PatternButton
+      value: 
+      objectReference: {fileID: 3033633977078091288, guid: 14892a38e41384e53844deed7134760d,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c8c80883aeb56d34daaff7d245c7e888, type: 3}
 --- !u!1001 &8594854801138504947
