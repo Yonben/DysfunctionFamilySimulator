@@ -5,7 +5,7 @@ using UnityEngine;
 public abstract class IndependentPenaltyBehviour : MonoBehaviour
 {
     protected PlayableCharacter player;
-    
+
     [SerializeField] private int penalty;
     [SerializeField] private float penaltyTimeRate;
 
@@ -26,7 +26,7 @@ public abstract class IndependentPenaltyBehviour : MonoBehaviour
         }
     }
 
-    public void Off()
+    virtual public void Off()
     {
         IsOn = false;
         print("Penalty Off");

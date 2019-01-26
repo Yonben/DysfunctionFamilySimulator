@@ -9,6 +9,7 @@ public class ActionableObject : MonoBehaviour
     public int stressImpact;
     public bool hasGlobalImpact;
     public Transform PatternButtonPos;
+    public Transform CharPos;
     public List<GameManager.PlayerType> ApplicableCharacters;
 
     public Sprite idleState;
@@ -25,7 +26,6 @@ public class ActionableObject : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        PatternButtonPos = this.gameObject.transform.GetChild(0);
     }
 
     public void OnMiniGameSuccess(GameManager.PlayerType playerType)
@@ -40,7 +40,7 @@ public class ActionableObject : MonoBehaviour
     {
         ApplicableCharacters.Add(playerType);
     }
-    
+
     public void AddApplicableCharacter(GameManager.PlayerType playerType, IndependentPenaltyBehviour independentPenaltyBehviour)
     {
         AddApplicableCharacter(playerType);
