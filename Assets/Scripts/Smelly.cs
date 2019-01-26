@@ -23,11 +23,10 @@ public class Smelly : IndependentPenaltyBehviour
 
 	private void FixedUpdate()
 	{
+		Vector2 position = _transform.position;
 		if (!IsOn)
 		{
-			Vector2 position = _transform.position;
 			distance += Vector2.Distance(position, lastPosition);
-			lastPosition = position;
 
 			if (distance >= distanceToBeSmelly)
 			{
@@ -37,5 +36,6 @@ public class Smelly : IndependentPenaltyBehviour
 				StartCoroutine(nameof(TakePenalty));
 			}
 		}
+		lastPosition = position;
 	}
 }

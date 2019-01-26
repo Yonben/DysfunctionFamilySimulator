@@ -31,6 +31,7 @@ public class ActionableObject : MonoBehaviour
     public void OnMiniGameSuccess(GameManager.PlayerType playerType)
     {
         // Reset Actionable state
+        print("OnMiniGameSuccess");
         _independentPenaltyBehviour.Off();
         ApplicableCharacters.Remove(playerType);
     }

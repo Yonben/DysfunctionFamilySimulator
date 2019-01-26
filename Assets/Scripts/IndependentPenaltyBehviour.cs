@@ -29,5 +29,6 @@ public abstract class IndependentPenaltyBehviour : MonoBehaviour
     public void Off()
     {
         IsOn = false;
+        print("Penalty Off");
     }
 }
