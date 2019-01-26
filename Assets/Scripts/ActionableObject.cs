@@ -83,8 +83,8 @@ public class ActionableObject : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        playableCharacter = other.GetComponent<PlayableCharacter>();
-        if (playableCharacter && ApplicableCharacters.Contains(playableCharacter.PlayerType))
+        PlayableCharacter playableCharacter_temp = other.GetComponent<PlayableCharacter>();
+        if (playableCharacter_temp && ApplicableCharacters.Contains(playableCharacter_temp.PlayerType))
         {
             buttonInstance.SetActive(true);
             PatternButtonAnim.SetTrigger(MiniGame.ButtonAnimations[XboxButton.A]);
@@ -100,19 +100,19 @@ public class ActionableObject : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D other)
     {
-        playableCharacter = other.GetComponent<PlayableCharacter>();
-        if (playableCharacter && ApplicableCharacters.Contains(playableCharacter.PlayerType))
+        PlayableCharacter playableCharacter_temp = other.GetComponent<PlayableCharacter>();
+        if (playableCharacter_temp && ApplicableCharacters.Contains(playableCharacter_temp.PlayerType))
         {
             if (XCI.GetButtonDown(XboxButton.A)) //todo - here problem
             {
                 if (CharPos)
                 {
-                    playableCharacter.disableMovement();
-                    playableCharacter.transform.position = CharPos.position;
-                    playableCharacter.PlayerController.isRight = CharFacingRight;
+                    playableCharacter_temp.disableMovement();
+                    playableCharacter_temp.transform.position = CharPos.position;
+                    playableCharacter_temp.PlayerController.isRight = CharFacingRight;
                 }
 
-                MiniGameScript.StartMiniGame(this, playableCharacter);
+                MiniGameScript.StartMiniGame(this, playableCharacter_temp);
             }
         }
         
@@ -120,8 +120,8 @@ public class ActionableObject : MonoBehaviour
 
     void OnTriggerExit2D(Collider2D other)
     {
-        playableCharacter = other.GetComponent<PlayableCharacter>();
-        if (playableCharacter && ApplicableCharacters.Contains(playableCharacter.PlayerType))
+        PlayableCharacter playableCharacter_temp = other.GetComponent<PlayableCharacter>();
+        if (playableCharacter_temp && ApplicableCharacters.Contains(playableCharacter_temp.PlayerType))
         {
             buttonInstance.SetActive(false);
             MiniGameScript.EndMiniGame();

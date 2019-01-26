@@ -239,7 +239,7 @@ PrefabInstance:
     - target: {fileID: 2611524469566072132, guid: 4f4139a1115877a43ac8f74ab441b2f5,
         type: 3}
       propertyPath: controller
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2694832174143450633, guid: 4f4139a1115877a43ac8f74ab441b2f5,
         type: 3}
@@ -555,8 +555,8 @@ GameObject:
   - component: {fileID: 411561241}
   - component: {fileID: 411561243}
   - component: {fileID: 411561244}
-  - component: {fileID: 411561246}
   - component: {fileID: 411561245}
+  - component: {fileID: 411561246}
   m_Layer: 0
   m_Name: Baby Cradle
   m_TagString: Untagged
@@ -732,7 +732,7 @@ MonoBehaviour:
   ApplicableCharacters: 01000000
   idleState: {fileID: 0}
   needsActionState: {fileID: 0}
-  MiniGameScript: {fileID: 0}
+  MiniGameScript: {fileID: 411561246}
   removeAllPlayer: 0
 --- !u!114 &411561246
 MonoBehaviour:
@@ -2198,7 +2198,7 @@ PrefabInstance:
     - target: {fileID: 4178012438447214574, guid: 8e1f23742592da549b9e90ff599d4ec2,
         type: 3}
       propertyPath: controller
-      value: 1
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3040299972572189314, guid: 8e1f23742592da549b9e90ff599d4ec2,
         type: 3}
@@ -3082,7 +3082,7 @@ PrefabInstance:
     - target: {fileID: 1098302914617785618, guid: adb11c4a6cc9d18479cbccca90be7d84,
         type: 3}
       propertyPath: controller
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8624463863346336685, guid: adb11c4a6cc9d18479cbccca90be7d84,
         type: 3}
