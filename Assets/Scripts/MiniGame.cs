@@ -93,16 +93,22 @@ public abstract class MiniGame : MonoBehaviour
             objectAnimationEntered = false;
         }
                 
-        if (!playerAnimationExit.Equals("") && playerAnimationEntered)
-        {
-            player.m_animator.SetTrigger(playerAnimationExit);
-            playerAnimationEntered = false;
-        }
         
-        if (desapireInEnter)
+
+        if (player)
         {
-            player.enabledMovement(true);
-            player.spriteRenderer.enabled = true;
+            if (!playerAnimationExit.Equals("") && playerAnimationEntered)
+            {
+                player.m_animator.SetTrigger(playerAnimationExit);
+                playerAnimationEntered = false;
+            }
+            
+            
+            if (desapireInEnter)
+            {
+                player.enabledMovement(true);
+                player.spriteRenderer.enabled = true;
+            }
         }
     }
 }

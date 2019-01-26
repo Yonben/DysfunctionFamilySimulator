@@ -82,31 +82,37 @@ public class ActionableObject : MonoBehaviour
 //        _independentPenaltyBehviour = independentPenaltyBehviour;
     }
 
-    void OnTriggerEnter2D(Collider2D other)
-    {
-        PlayableCharacter playableCharacter_temp = other.GetComponent<PlayableCharacter>();
-        if (playableCharacter_temp && ApplicableCharacters.Contains(playableCharacter_temp.PlayerType))
-        {
-            buttonInstance.SetActive(true);
-            PatternButtonAnim.SetTrigger(MiniGame.ButtonAnimations[XboxButton.A]);
-//            if (CharPos)
-//            {
-//                playableCharacter.disableMovement();
-//                playableCharacter.transform.position = CharPos.position;
-//                playableCharacter.PlayerController.isRight = CharFacingRight;
-//            }
-//            MiniGameScript.StartMiniGame(this, playableCharacter);
-        }
-    }
+//    void OnTriggerEnter2D(Collider2D other)
+//    {
+//        PlayableCharacter playableCharacter_temp = other.GetComponent<PlayableCharacter>();
+//        if (playableCharacter_temp && ApplicableCharacters.Contains(playableCharacter_temp.PlayerType))
+//        {
+//            buttonInstance.SetActive(true);
+//            PatternButtonAnim.SetTrigger(MiniGame.ButtonAnimations[XboxButton.A]);
+////            if (CharPos)
+////            {
+////                playableCharacter.disableMovement();
+////                playableCharacter.transform.position = CharPos.position;
+////                playableCharacter.PlayerController.isRight = CharFacingRight;
+////            }
+////            MiniGameScript.StartMiniGame(this, playableCharacter);
+//        }
+//    }
 
     private void OnTriggerStay2D(Collider2D other)
     {
         if (MiniGameScript.inMiniGame)
             return;
         PlayableCharacter playableCharacter_temp = other.GetComponent<PlayableCharacter>();
+        
         if (playableCharacter_temp && ApplicableCharacters.Contains(playableCharacter_temp.PlayerType))
         {
-            if (XCI.GetButtonDown(XboxButton.A, playableCharacter_temp.PlayerController.controller))
+            if (!buttonInstance.activeSelf)
+            {
+                buttonInstance.SetActive(true);
+                PatternButtonAnim.SetTrigger(MiniGame.ButtonAnimations[XboxButton.A]);
+            }
+            else if (XCI.GetButtonDown(XboxButton.A, playableCharacter_temp.PlayerController.controller))
             {
                 if (CharPos)
                 {
@@ -121,7 +127,6 @@ public class ActionableObject : MonoBehaviour
                 print("enter");
             }
         }
-        
     }
 
 
