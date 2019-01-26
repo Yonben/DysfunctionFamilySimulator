@@ -42,30 +42,41 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1157757805984658216, guid: e784c84914829354998cbdc5b45744c1,
-        type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1157757805984658216, guid: e784c84914829354998cbdc5b45744c1,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4867930332954069640, guid: e784c84914829354998cbdc5b45744c1,
-        type: 3}
-      propertyPath: m_TargetGraphic
-      value: 
-      objectReference: {fileID: 6678920942084410363}
-    - target: {fileID: 4867930332954069640, guid: e784c84914829354998cbdc5b45744c1,
-        type: 3}
-      propertyPath: m_FillRect
-      value: 
-      objectReference: {fileID: 4783575123097386056}
     - target: {fileID: 8524888613199161889, guid: e784c84914829354998cbdc5b45744c1,
         type: 3}
       propertyPath: m_Name
       value: Kid Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 8524888612772202308, guid: e784c84914829354998cbdc5b45744c1,
+        type: 3}
+      propertyPath: PlayerController
+      value: 
+      objectReference: {fileID: 2611524469566072132}
+    - target: {fileID: 8524888612772202308, guid: e784c84914829354998cbdc5b45744c1,
+        type: 3}
+      propertyPath: PlayerType
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8524888612772202308, guid: e784c84914829354998cbdc5b45744c1,
+        type: 3}
+      propertyPath: stressSlider
+      value: 
+      objectReference: {fileID: 1296436863559026152}
+    - target: {fileID: 8524888613199161892, guid: e784c84914829354998cbdc5b45744c1,
+        type: 3}
+      propertyPath: controller
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8524888613199161893, guid: e784c84914829354998cbdc5b45744c1,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: de308046986307c4a8730a2e294c39a1,
+        type: 3}
+    - target: {fileID: 8524888613199161893, guid: e784c84914829354998cbdc5b45744c1,
+        type: 3}
+      propertyPath: m_SpriteSortPoint
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8524888613199161894, guid: e784c84914829354998cbdc5b45744c1,
         type: 3}
@@ -122,31 +133,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8524888613199161893, guid: e784c84914829354998cbdc5b45744c1,
+    - target: {fileID: 4867930332954069640, guid: e784c84914829354998cbdc5b45744c1,
         type: 3}
-      propertyPath: m_Sprite
+      propertyPath: m_TargetGraphic
       value: 
-      objectReference: {fileID: 21300000, guid: de308046986307c4a8730a2e294c39a1,
+      objectReference: {fileID: 6678920942084410363}
+    - target: {fileID: 4867930332954069640, guid: e784c84914829354998cbdc5b45744c1,
         type: 3}
-    - target: {fileID: 8524888612772202308, guid: e784c84914829354998cbdc5b45744c1,
-        type: 3}
-      propertyPath: PlayerController
+      propertyPath: m_FillRect
       value: 
-      objectReference: {fileID: 2611524469566072132}
-    - target: {fileID: 8524888612772202308, guid: e784c84914829354998cbdc5b45744c1,
+      objectReference: {fileID: 4783575123097386056}
+    - target: {fileID: 1157757805984658216, guid: e784c84914829354998cbdc5b45744c1,
         type: 3}
-      propertyPath: PlayerType
-      value: 2
+      propertyPath: m_AnchorMax.x
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8524888612772202308, guid: e784c84914829354998cbdc5b45744c1,
+    - target: {fileID: 1157757805984658216, guid: e784c84914829354998cbdc5b45744c1,
         type: 3}
-      propertyPath: stressSlider
-      value: 
-      objectReference: {fileID: 1296436863559026152}
-    - target: {fileID: 8524888613199161892, guid: e784c84914829354998cbdc5b45744c1,
-        type: 3}
-      propertyPath: controller
-      value: 3
+      propertyPath: m_AnchorMax.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8524888613199161890, guid: e784c84914829354998cbdc5b45744c1,
         type: 3}
