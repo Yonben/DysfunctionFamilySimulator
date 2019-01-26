@@ -14,7 +14,8 @@ public class PlayableCharacter : MonoBehaviour
     [HideInInspector] public PlayerController PlayerController;
 
     private Rigidbody2D m_Rigidbody2D;
-    private Animator m_animator;
+    public Animator m_animator;
+    [HideInInspector] public SpriteRenderer spriteRenderer;
 
     [SerializeField] private Slider stressSlider;
 
@@ -26,6 +27,7 @@ public class PlayableCharacter : MonoBehaviour
 
         m_Rigidbody2D = GetComponent<Rigidbody2D>();
         m_animator = GetComponent<Animator>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
 
         stressSlider.value = (float)(stress) / (float)maxStress;
     }

@@ -5,6 +5,8 @@ using XboxCtrlrInput;
 
 public class PatternMiniGame : MiniGame
 {
+    
+    
     public List<XboxButton> buttonsPattern;
     public bool isRandom = false;
     public int stepsNumber = 0;

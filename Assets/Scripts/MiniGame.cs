@@ -5,6 +5,12 @@ using XboxCtrlrInput;
 
 public abstract class MiniGame : MonoBehaviour
 {
+    private Animator _animator;
+    public bool desapireInEnter;
+    public string objectAnimationEnter;
+    public string objectAnimationExit;
+    public string playerAnimationEnter;
+    public string playerAnimationExit;
     
     protected ActionableObject actionableObject;
     protected PlayableCharacter player;
@@ -16,6 +22,11 @@ public abstract class MiniGame : MonoBehaviour
         {XboxButton.X, "xButton"},
         {XboxButton.Y, "yButton"},
     };
+    
+    private void Awake()
+    {
+        _animator = GetComponent<Animator>();
+    }
 
     void Start()
     {
@@ -35,6 +46,21 @@ public abstract class MiniGame : MonoBehaviour
         actionableObject = actionable;
         player = initiator;
         isPlaying = true;
+        
+        if (!objectAnimationEnter.Equals(""))
+        {
+            _animator.SetTrigger(objectAnimationEnter);
+        }
+                
+        if (!playerAnimationEnter.Equals(""))
+        {
+            player.m_animator.SetTrigger(playerAnimationEnter);
+        }
+
+        if (desapireInEnter)
+        {
+            player.spriteRenderer.enabled = false;
+        }
     }
 
     public abstract void PlayGame();
@@ -49,6 +75,21 @@ public abstract class MiniGame : MonoBehaviour
         {
             actionableObject.OnMiniGameSuccess(player.PlayerType);
             player.ApplyStressImpact(actionableObject.stressImpact);
+        }
+        
+        if (!objectAnimationExit.Equals(""))
+        {
+            _animator.SetTrigger(objectAnimationExit);
+        }
+                
+        if (!playerAnimationExit.Equals(""))
+        {
+            player.m_animator.SetTrigger(playerAnimationExit);
+        }
+        
+        if (desapireInEnter)
+        {
+            player.spriteRenderer.enabled = true;
         }
     }
 }

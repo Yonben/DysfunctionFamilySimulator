@@ -6,6 +6,8 @@ using XboxCtrlrInput;
 public class ActionableObject : MonoBehaviour
 {
 
+    
+    
     public bool isExplicit;
     public int stressImpact;
     public bool hasGlobalImpact;
@@ -32,6 +34,9 @@ public class ActionableObject : MonoBehaviour
     private Dictionary<GameManager.PlayerType, IndependentPenaltyBehviour> _independentPenaltyBehvioursMap =
         new Dictionary<GameManager.PlayerType, IndependentPenaltyBehviour>();
 //    private IndependentPenaltyBehviour _independentPenaltyBehviour;
+
+
+    
 
     // Start is called before the first frame update
     void Start()
@@ -100,6 +105,8 @@ public class ActionableObject : MonoBehaviour
         {
             if (XCI.GetButtonDown(XboxButton.A))
             {
+                
+                
                 if (CharPos)
                 {
                     playableCharacter.disableMovement();
@@ -115,8 +122,12 @@ public class ActionableObject : MonoBehaviour
 
     void OnTriggerExit2D(Collider2D other)
     {
-        buttonInstance.SetActive(false);
-        MiniGameScript.EndMiniGame();
+        playableCharacter = other.GetComponent<PlayableCharacter>();
+        if (playableCharacter && ApplicableCharacters.Contains(playableCharacter.PlayerType))
+        {
+            buttonInstance.SetActive(false);
+            MiniGameScript.EndMiniGame();
+        }
     }
 
 
