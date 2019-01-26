@@ -375,6 +375,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stress: 0
   maxStress: 100
+  PlayerController: {fileID: 0}
   stressSlider: {fileID: 6857203752031537206}
   PlayerType: 3
 --- !u!114 &4178012438447214574
@@ -440,7 +441,7 @@ Animator:
   m_GameObject: {fileID: 6378146045476021247}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: e18a62105c161034fbe0a578fdd7cd06, type: 2}
+  m_Controller: {fileID: 9100000, guid: eea185f99263faa4ba621da98d345bec, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
