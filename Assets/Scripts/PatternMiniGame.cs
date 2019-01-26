@@ -20,12 +20,15 @@ public class PatternMiniGame : MiniGame
 
     [SerializeField] private Transform t;
 
+    [SerializeField] private int scoreToAdd = 0;
+
     public override void StartMiniGame(ActionableObject actionable, PlayableCharacter initiator)
     {
         base.StartMiniGame(actionable, initiator);
 
         var actionableButtonPos = actionableObject.PatternButtonPos.position;
-        buttonInstance = (GameObject)Instantiate(PatternButton, actionableButtonPos, Quaternion.identity);
+        if (!buttonInstance)
+            buttonInstance = (GameObject)Instantiate(PatternButton, actionableButtonPos, Quaternion.identity);
         PatternButtonAnim = buttonInstance.GetComponent<Animator>();
 
         GetNextButtonToPress();
@@ -66,6 +69,8 @@ public class PatternMiniGame : MiniGame
                 {
                     player.ApplyStressImpact(actionableObject.stressImpact);
                     infiniteStepsCount = 0;
+
+                    GameManager.instance.Score += scoreToAdd;
                 }
             }
             else if (isRandom && stepsNumber > 0)

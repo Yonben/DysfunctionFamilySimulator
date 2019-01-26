@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
 	private int playerAliveCount;
 
 	[SerializeField] private Text GameOverText;
+	[SerializeField] private GameObject GameOverGO;
 	[SerializeField] private Text ScoreText;
 
 	private int score = 0;
@@ -42,6 +43,7 @@ public class GameManager : MonoBehaviour
 
 		playerAliveCount = players.Count;
 		GameOverText.enabled = false;
+		GameOverGO.SetActive(false);
 		Score = 0;
 	}
 
@@ -53,6 +55,7 @@ public class GameManager : MonoBehaviour
 		{
 			//todo
 			GameOverText.enabled = true;
+			GameOverGO.SetActive(true);
 		}
 	}
 	
