@@ -15,8 +15,8 @@ public class PatternMiniGame : MiniGame
     private int infiniteStepsCount = 0;
 
     private XboxButton buttonToPress;
-    private GameObject buttonInstance;
-    private Animator PatternButtonAnim;
+//    private GameObject buttonInstance;
+//    private Animator PatternButtonAnim;
 
     [SerializeField] private Transform t;
 
@@ -26,11 +26,12 @@ public class PatternMiniGame : MiniGame
     {
         base.StartMiniGame(actionable, initiator);
 
-        var actionableButtonPos = actionableObject.PatternButtonPos.position;
-        if (!buttonInstance)
-            buttonInstance = (GameObject)Instantiate(PatternButton, actionableButtonPos, Quaternion.identity);
-        PatternButtonAnim = buttonInstance.GetComponent<Animator>();
+//        var actionableButtonPos = actionableObject.PatternButtonPos.position;
+//        if (!buttonInstance)
+//            buttonInstance = (GameObject)Instantiate(PatternButton, actionableButtonPos, Quaternion.identity);
+//        PatternButtonAnim = buttonInstance.GetComponent<Animator>();
 
+        actionableObject.buttonInstance.SetActive(true);
         GetNextButtonToPress();
     }
 
@@ -44,7 +45,9 @@ public class PatternMiniGame : MiniGame
         {
             buttonToPress = buttonsPattern[currentButtonIndex];
         }
-        PatternButtonAnim.SetTrigger(MiniGame.ButtonAnimations[buttonToPress]);
+        if(!actionableObject.PatternButtonAnim)
+            print("error in " + gameObject.name);
+        actionableObject.PatternButtonAnim.SetTrigger(MiniGame.ButtonAnimations[buttonToPress]);
     }
 
     public override void EndMiniGame(bool miniGameSuccess = false)
@@ -53,10 +56,12 @@ public class PatternMiniGame : MiniGame
 
         currentButtonIndex = 0;
         infiniteStepsCount = 0;
-        if (buttonInstance)
-        {
-            Destroy(buttonInstance);
-        }
+        if(actionableObject!= null && actionableObject.PatternButtonAnim != null)
+            actionableObject.buttonInstance.SetActive(false);
+//        if (actionableObject.buttonInstance)
+//        {
+//            Destroy(actionableObject.buttonInstance);
+//        }
     }
 
     public override void PlayGame()

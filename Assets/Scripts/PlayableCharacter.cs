@@ -83,7 +83,7 @@ public class PlayableCharacter : MonoBehaviour
     
     IEnumerator enableMovement() 
     {
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(0.5f);
         yield return new WaitUntil(() => PlayerController.isTryMoove());
         enabledMovement(true);
     }
