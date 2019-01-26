@@ -55,6 +55,7 @@ public class ActionableObject : MonoBehaviour
 //        _independentPenaltyBehviour.Off();
         
         ApplicableCharacters.Remove(playerType);
+        
         if (removeAllPlayer)
         {
             foreach (var key in _independentPenaltyBehvioursMap.Keys)
@@ -63,7 +64,7 @@ public class ActionableObject : MonoBehaviour
                 _independentPenaltyBehvioursMap.Remove(key);
             }
         }
-        else
+        else if (_independentPenaltyBehvioursMap.ContainsKey(playerType))
         {
             _independentPenaltyBehvioursMap[playerType].Off();
             _independentPenaltyBehvioursMap.Remove(playerType);
