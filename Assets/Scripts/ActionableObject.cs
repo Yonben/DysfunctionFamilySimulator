@@ -6,7 +6,18 @@ using XboxCtrlrInput;
 public class ActionableObject : MonoBehaviour
 {
 
+    private Animator _animator;
     
+    [System.Serializable]
+    struct BrokenMiniGame
+    {
+        public bool CanBeBroke;
+        public MiniGame BrokenMiniGameScript;
+        public int minBrokenTime;
+        public int maxBrokenTime;
+        public PlayableCharacter dad;
+        public Sprite needIcon;
+    }
     
     public bool isExplicit;
     public int stressImpact;
@@ -28,9 +39,33 @@ public class ActionableObject : MonoBehaviour
 
 //    private PlayableCharacter playableCharacter;
 
-    private bool isBroken;
-
     [SerializeField] private bool removeAllPlayer;
+    
+    private bool isBroken;
+    
+    public bool IsBroken {
+        get
+        {
+            return isBroken;
+        }
+        set
+        {
+            isBroken = value;
+            _animator.SetBool("broken", isBroken);
+            if (isBroken)
+            {
+                if (!_brokenMiniGame.dad.needsSprites.Contains(_brokenMiniGame.needIcon))
+                {
+                    _brokenMiniGame.dad.needsSprites.Add(_brokenMiniGame.needIcon);
+                }
+            }
+            else
+            {
+                _brokenMiniGame.dad.needsSprites.Remove(_brokenMiniGame.needIcon);
+            }
+
+        }
+    }
 
 
     private Dictionary<GameManager.PlayerType, IndependentPenaltyBehviour> _independentPenaltyBehvioursMap =
@@ -38,7 +73,13 @@ public class ActionableObject : MonoBehaviour
 //    private IndependentPenaltyBehviour _independentPenaltyBehviour;
 
 
-    
+    [SerializeField] private BrokenMiniGame _brokenMiniGame;
+
+
+    private void Awake()
+    {
+        _animator = GetComponent<Animator>();
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -47,6 +88,11 @@ public class ActionableObject : MonoBehaviour
             buttonInstance = (GameObject)Instantiate(PatternButton, PatternButtonPos.position, Quaternion.identity);
         PatternButtonAnim = buttonInstance.GetComponent<Animator>();
         buttonInstance.SetActive(false);
+
+        if (_brokenMiniGame.CanBeBroke)
+        {
+            StartCoroutine(nameof(broke));
+        }
     }
 
     public void OnMiniGameSuccess(GameManager.PlayerType playerType)
@@ -69,6 +115,12 @@ public class ActionableObject : MonoBehaviour
         {
             _independentPenaltyBehvioursMap[playerType].Off();
             _independentPenaltyBehvioursMap.Remove(playerType);
+        }
+
+
+        if (IsBroken)
+        {
+            IsBroken = false;
         }
     }
 
@@ -106,31 +158,46 @@ public class ActionableObject : MonoBehaviour
         if (MiniGameScript.inMiniGame)
             return;
         PlayableCharacter playableCharacter_temp = other.GetComponent<PlayableCharacter>();
-        
-        if (playableCharacter_temp && ApplicableCharacters.Contains(playableCharacter_temp.PlayerType))
-        {
-            if (!buttonInstance.activeSelf)
-            {
-                buttonInstance.SetActive(true);
-                PatternButtonAnim.SetTrigger(MiniGame.ButtonAnimations[XboxButton.A]);
-            }
-            else if (XCI.GetButtonDown(XboxButton.A, playableCharacter_temp.PlayerController.controller))
-            {
-                PatternButtonAnim.SetTrigger("white");
-                if (CharPos)
-                {
-                    if (!MiniGameScript.desapireInEnter)
-                        playableCharacter_temp.disableMovement();
-                    playableCharacter_temp.transform.position = CharPos.position;
-                    playableCharacter_temp.PlayerController.isRight = CharFacingRight;
-                    stickTime = Time.fixedTime;
-                }
-                print("here");
 
-                MiniGameScript.StartMiniGame(this, playableCharacter_temp);
-                print("enter");
+        if (!playableCharacter_temp)
+            return;
+        if (!IsBroken)
+        {
+            if (ApplicableCharacters.Contains(playableCharacter_temp.PlayerType))
+            {
+                EnterMiniGame(MiniGameScript, playableCharacter_temp);
             }
         }
+        else
+        {
+            if (playableCharacter_temp.PlayerType == GameManager.PlayerType.Dad)
+            {
+                EnterMiniGame(_brokenMiniGame.BrokenMiniGameScript, playableCharacter_temp);
+            }
+        }
+    }
+
+    private void EnterMiniGame(MiniGame miniGameToEnter, PlayableCharacter playableCharacter)
+    {
+        if (!buttonInstance.activeSelf)
+        {
+            buttonInstance.SetActive(true);
+            PatternButtonAnim.SetTrigger(MiniGame.ButtonAnimations[XboxButton.A]);
+        }
+        else if (XCI.GetButtonDown(XboxButton.A, playableCharacter.PlayerController.controller))
+        {
+            PatternButtonAnim.SetTrigger("white");
+            if (CharPos)
+            {
+                if (!miniGameToEnter.desapireInEnter)
+                    playableCharacter.disableMovement();
+                playableCharacter.transform.position = CharPos.position;
+                playableCharacter.PlayerController.isRight = CharFacingRight;
+                stickTime = Time.fixedTime;
+            }
+            miniGameToEnter.StartMiniGame(this, playableCharacter);
+        }
+       
     }
 
 
@@ -149,6 +216,20 @@ public class ActionableObject : MonoBehaviour
             MiniGameScript.EndMiniGame(triggerExit: true);
         }
     }
+
+    #region Broken
+
+    IEnumerator broke()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(Random.Range(_brokenMiniGame.minBrokenTime, _brokenMiniGame.maxBrokenTime));
+            yield return new WaitUntil(() => !MiniGameScript.inMiniGame);
+            IsBroken = true;
+        }
+    }
+
+    #endregion
 
 
 }
