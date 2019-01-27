@@ -75,6 +75,8 @@ public class ActionableObject : MonoBehaviour
 
     [SerializeField] private BrokenMiniGame _brokenMiniGame;
 
+    [SerializeField] private bool isDogPoop = false;
+
 
     private void Awake()
     {
@@ -122,6 +124,11 @@ public class ActionableObject : MonoBehaviour
                 _independentPenaltyBehvioursMap[playerType].Off();
                 _independentPenaltyBehvioursMap.Remove(playerType);
             }
+        }
+
+        if (isDogPoop)
+        {
+            Destroy(gameObject);
         }
 
 

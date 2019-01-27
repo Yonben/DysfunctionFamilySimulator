@@ -1,5 +1,35 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &220881188079745244
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9158578847700596098}
+  m_Layer: 0
+  m_Name: PatternPos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &9158578847700596098
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 220881188079745244}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 40, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 8594854800872219341}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8594854799561700189
 GameObject:
   m_ObjectHideFlags: 0
@@ -233,6 +263,8 @@ GameObject:
   - component: {fileID: 8594854800872219340}
   - component: {fileID: 8594854800872219314}
   - component: {fileID: 7344113577394544645}
+  - component: {fileID: 8460579719777700989}
+  - component: {fileID: 5273739602116982795}
   m_Layer: 0
   m_Name: Poop
   m_TagString: Untagged
@@ -253,6 +285,7 @@ Transform:
   m_Children:
   - {fileID: 8594854800033461120}
   - {fileID: 8594854800194931772}
+  - {fileID: 9158578847700596098}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -357,3 +390,63 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &8460579719777700989
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8594854800872219342}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fca4dd5d2fc24921a4f93dd20bad42a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isExplicit: 0
+  stressImpact: 2
+  hasGlobalImpact: 0
+  PatternButtonPos: {fileID: 9158578847700596098}
+  buttonInstance: {fileID: 0}
+  PatternButtonAnim: {fileID: 0}
+  PatternButton: {fileID: 3033633977078091288, guid: 14892a38e41384e53844deed7134760d,
+    type: 3}
+  CharPos: {fileID: 0}
+  CharExitMiniGamePos: {fileID: 0}
+  CharFacingRight: 1
+  ApplicableCharacters: 000000000100000002000000
+  idleState: {fileID: 0}
+  needsActionState: {fileID: 0}
+  MiniGameScript: {fileID: 5273739602116982795}
+  removeAllPlayer: 0
+  _brokenMiniGame:
+    CanBeBroke: 0
+    BrokenMiniGameScript: {fileID: 0}
+    minBrokenTime: 0
+    maxBrokenTime: 0
+  isDogPoop: 1
+--- !u!114 &5273739602116982795
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8594854800872219342}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba513ed50102f44208e7909f7bf1288c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  desapireInEnter: 0
+  objectAnimationEnter: 
+  objectAnimationExit: 
+  playerAnimationEnter: 
+  playerAnimationExit: 
+  objectAnimationEntered: 0
+  playerAnimationEntered: 0
+  inMiniGame: 0
+  buttonsPattern: 03000000
+  isRandom: 0
+  stepsNumber: 0
+  infiniteStepsNumber: 0
+  t: {fileID: 0}
+  scoreToAdd: 0
