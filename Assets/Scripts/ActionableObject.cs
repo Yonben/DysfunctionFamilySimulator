@@ -17,6 +17,7 @@ public class ActionableObject : MonoBehaviour
     public GameObject PatternButton;
     
     public Transform CharPos;
+    public Transform CharExitMiniGamePos;
     public bool CharFacingRight = true;
     public List<GameManager.PlayerType> ApplicableCharacters;
 
@@ -144,7 +145,7 @@ public class ActionableObject : MonoBehaviour
         if (playableCharacter_temp && ApplicableCharacters.Contains(playableCharacter_temp.PlayerType))
         {
             buttonInstance.SetActive(false);
-            MiniGameScript.EndMiniGame();
+            MiniGameScript.EndMiniGame(triggerExit: true);
         }
     }
 

@@ -52,9 +52,9 @@ public class PatternMiniGame : MiniGame
         actionableObject.PatternButtonAnim.SetTrigger(MiniGame.ButtonAnimations[buttonToPress]);
     }
 
-    public override void EndMiniGame(bool miniGameSuccess = false)
+    public override void EndMiniGame(bool miniGameSuccess = false, bool triggerExit = false)
     {
-        base.EndMiniGame(miniGameSuccess);
+        base.EndMiniGame(miniGameSuccess, triggerExit);
 
         currentButtonIndex = 0;
         infiniteStepsCount = 0;

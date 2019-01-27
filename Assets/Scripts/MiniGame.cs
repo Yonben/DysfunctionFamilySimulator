@@ -73,7 +73,7 @@ public abstract class MiniGame : MonoBehaviour
 
     public abstract void PlayGame();
 
-    public virtual void EndMiniGame(bool miniGameSuccess = false)
+    public virtual void EndMiniGame(bool miniGameSuccess = false, bool triggerExit = false)
     {
         inMiniGame = false;
         
@@ -108,6 +108,11 @@ public abstract class MiniGame : MonoBehaviour
             {
                 player.enabledMovement(true);
                 player.spriteRenderer.enabled = true;
+            }
+
+            if (!triggerExit && actionableObject.CharExitMiniGamePos)
+            {
+                player.transform.position = actionableObject.CharExitMiniGamePos.transform.position;
             }
         }
     }
