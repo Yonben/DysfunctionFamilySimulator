@@ -119,7 +119,8 @@ public class ActionableObject : MonoBehaviour
                 PatternButtonAnim.SetTrigger("white");
                 if (CharPos)
                 {
-                    playableCharacter_temp.disableMovement();
+                    if (!MiniGameScript.desapireInEnter)
+                        playableCharacter_temp.disableMovement();
                     playableCharacter_temp.transform.position = CharPos.position;
                     playableCharacter_temp.PlayerController.isRight = CharFacingRight;
                     stickTime = Time.fixedTime;
