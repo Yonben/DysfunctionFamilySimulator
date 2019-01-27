@@ -75,7 +75,7 @@ public class PlayableCharacter : MonoBehaviour
 
     public void enabledMovement(bool enable = true)
     {
-        m_Rigidbody2D.bodyType = enable ? RigidbodyType2D.Dynamic : RigidbodyType2D.Static;
+        m_Rigidbody2D.constraints = enable ? RigidbodyConstraints2D.FreezeRotation : RigidbodyConstraints2D.FreezeAll;
         PlayerController.canMove = enable;
     }
 
@@ -109,7 +109,7 @@ public class PlayableCharacter : MonoBehaviour
                 needsSpriteRenderer.sprite = null;
                 yield return new WaitWhile(() => needsSprites.Count == 0);
             }
-            print("we have need");
+//            print("we have need");
             
             if (lastNeed)
                 lastNeed = needsSprites[(needsSprites.IndexOf(lastNeed) + 1) % needsSprites.Count]; //index of return -1 when not found.
