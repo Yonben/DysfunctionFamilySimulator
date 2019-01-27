@@ -223,6 +223,7 @@ public class ActionableObject : MonoBehaviour
     {
         while (true)
         {
+            yield return new WaitUntil(() => !IsBroken); 
             yield return new WaitForSeconds(Random.Range(_brokenMiniGame.minBrokenTime, _brokenMiniGame.maxBrokenTime));
             yield return new WaitUntil(() => !MiniGameScript.inMiniGame);
             IsBroken = true;
