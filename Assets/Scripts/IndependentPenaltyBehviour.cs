@@ -10,6 +10,9 @@ public abstract class IndependentPenaltyBehviour : MonoBehaviour
     [SerializeField] private float penaltyTimeRate;
 
 
+    [SerializeField] private Sprite needIcon;
+
+
 
     private bool isOn = false;
 
@@ -21,6 +24,17 @@ public abstract class IndependentPenaltyBehviour : MonoBehaviour
         set
         {
             isOn = value;
+            if (isOn)
+            {
+                if (!player.needsSprites.Contains(needIcon))
+                {
+                    player.needsSprites.Add(needIcon);
+                }
+            }
+            else
+            {
+                player.needsSprites.Remove(needIcon);
+            }
 
         }
     }

@@ -21,6 +21,9 @@ public class PlayableCharacter : MonoBehaviour
 
     public GameManager.PlayerType PlayerType;
 
+    [SerializeField] private SpriteRenderer needsSpriteRenderer;
+    [HideInInspector] public List<Sprite> needsSprites;
+
     private void Awake()
     {
         PlayerController = GetComponent<PlayerController>();
@@ -30,6 +33,11 @@ public class PlayableCharacter : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
 
         stressSlider.value = (float)(stress) / (float)maxStress;
+    }
+
+    private void Start()
+    {
+        StartCoroutine(nameof(needsHandler));
     }
 
     private void Update()
@@ -89,5 +97,29 @@ public class PlayableCharacter : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         yield return new WaitUntil(() => PlayerController.isTryMoove());
         enabledMovement(true);
+    }
+
+    IEnumerator needsHandler()
+    {
+        Sprite lastNeed = null;
+        while (true)
+        {
+            if (needsSprites.Count == 0)
+            {
+                needsSpriteRenderer.sprite = null;
+                yield return new WaitWhile(() => needsSprites.Count == 0);
+            }
+            print("we have need");
+            
+            if (lastNeed)
+                lastNeed = needsSprites[(needsSprites.IndexOf(lastNeed) + 1) % needsSprites.Count]; //index of return -1 when not found.
+            else
+            {
+                lastNeed = needsSprites[0];
+            }
+
+            needsSpriteRenderer.sprite = lastNeed;
+            yield return new WaitForSeconds(1f);
+        }
     }
 }
