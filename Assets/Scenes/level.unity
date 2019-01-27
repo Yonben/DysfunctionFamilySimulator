@@ -2089,7 +2089,7 @@ MonoBehaviour:
   buttonsPattern: 01000000010000000100000001000000010000000100000001000000010000000100000001000000
   isRandom: 0
   stepsNumber: 0
-  infiniteStepsNumber: 5
+  infiniteStepsNumber: 0
   t: {fileID: 0}
   scoreToAdd: 0
 --- !u!114 &1242787524
