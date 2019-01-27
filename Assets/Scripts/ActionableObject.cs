@@ -115,6 +115,7 @@ public class ActionableObject : MonoBehaviour
             }
             else if (XCI.GetButtonDown(XboxButton.A, playableCharacter_temp.PlayerController.controller))
             {
+                PatternButtonAnim.SetTrigger("white");
                 if (CharPos)
                 {
                     playableCharacter_temp.disableMovement();

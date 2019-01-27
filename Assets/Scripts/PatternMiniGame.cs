@@ -70,6 +70,7 @@ public class PatternMiniGame : MiniGame
     {
         if (XCI.GetButtonDown(buttonToPress, player.PlayerController.controller))
         {
+            actionableObject.PatternButtonAnim.SetTrigger("white");
             if (stepsNumber == 0 && infiniteStepsNumber > 0)
             {
                 if (++infiniteStepsCount >= infiniteStepsNumber)
