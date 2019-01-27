@@ -738,6 +738,13 @@ MonoBehaviour:
   needsActionState: {fileID: 0}
   MiniGameScript: {fileID: 411561246}
   removeAllPlayer: 0
+  _brokenMiniGame:
+    CanBeBroke: 0
+    BrokenMiniGameScript: {fileID: 0}
+    minBrokenTime: 0
+    maxBrokenTime: 0
+    dad: {fileID: 0}
+    needIcon: {fileID: 0}
 --- !u!114 &411561246
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1528,6 +1535,38 @@ Transform:
   m_Father: {fileID: 1189150364}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &989990038 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6547498993613424248, guid: 1101e4dc1bb444d4999a64034faf8daa,
+    type: 3}
+  m_PrefabInstance: {fileID: 2043659992}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &989990044
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 989990038}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba513ed50102f44208e7909f7bf1288c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  desapireInEnter: 0
+  objectAnimationEnter: 
+  objectAnimationExit: 
+  playerAnimationEnter: fix
+  playerAnimationExit: stopfix
+  objectAnimationEntered: 0
+  playerAnimationEntered: 0
+  inMiniGame: 0
+  buttonsPattern: 0000000000000000000000000000000000000000
+  isRandom: 1
+  stepsNumber: 0
+  infiniteStepsNumber: 0
+  t: {fileID: 0}
+  scoreToAdd: 0
 --- !u!1 &1044294112
 GameObject:
   m_ObjectHideFlags: 0
@@ -2229,6 +2268,13 @@ MonoBehaviour:
   needsActionState: {fileID: 0}
   MiniGameScript: {fileID: 1242787523}
   removeAllPlayer: 0
+  _brokenMiniGame:
+    CanBeBroke: 0
+    BrokenMiniGameScript: {fileID: 0}
+    minBrokenTime: 0
+    maxBrokenTime: 0
+    dad: {fileID: 0}
+    needIcon: {fileID: 0}
 --- !u!1 &1279769527
 GameObject:
   m_ObjectHideFlags: 0
@@ -3634,7 +3680,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 2043659992}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 989990038}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1fca4dd5d2fc24921a4f93dd20bad42a, type: 3}
@@ -3917,8 +3963,15 @@ MonoBehaviour:
   ApplicableCharacters: 01000000
   idleState: {fileID: 0}
   needsActionState: {fileID: 0}
-  MiniGameScript: {fileID: 0}
+  MiniGameScript: {fileID: 1969727453}
   removeAllPlayer: 0
+  _brokenMiniGame:
+    CanBeBroke: 0
+    BrokenMiniGameScript: {fileID: 0}
+    minBrokenTime: 0
+    maxBrokenTime: 0
+    dad: {fileID: 0}
+    needIcon: {fileID: 0}
 --- !u!1 &1970853907
 GameObject:
   m_ObjectHideFlags: 0
@@ -4130,6 +4183,37 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 3033633977078091288, guid: 14892a38e41384e53844deed7134760d,
         type: 3}
+    - target: {fileID: 8243336854724505431, guid: 1101e4dc1bb444d4999a64034faf8daa,
+        type: 3}
+      propertyPath: _brokenMiniGame.BrokenMiniGameScript
+      value: 
+      objectReference: {fileID: 989990044}
+    - target: {fileID: 8243336854724505431, guid: 1101e4dc1bb444d4999a64034faf8daa,
+        type: 3}
+      propertyPath: _brokenMiniGame.minBrokenTime
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8243336854724505431, guid: 1101e4dc1bb444d4999a64034faf8daa,
+        type: 3}
+      propertyPath: _brokenMiniGame.maxBrokenTime
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8243336854724505431, guid: 1101e4dc1bb444d4999a64034faf8daa,
+        type: 3}
+      propertyPath: _brokenMiniGame.dad
+      value: 
+      objectReference: {fileID: 245978905}
+    - target: {fileID: 8243336854724505431, guid: 1101e4dc1bb444d4999a64034faf8daa,
+        type: 3}
+      propertyPath: _brokenMiniGame.needIcon
+      value: 
+      objectReference: {fileID: 21300000, guid: 437840cd86e4eb34abc6855fff002477,
+        type: 3}
+    - target: {fileID: 8243336854724505431, guid: 1101e4dc1bb444d4999a64034faf8daa,
+        type: 3}
+      propertyPath: _brokenMiniGame.CanBeBroke
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6547498994531028245, guid: 1101e4dc1bb444d4999a64034faf8daa,
         type: 3}
       propertyPath: m_LocalPosition.x
