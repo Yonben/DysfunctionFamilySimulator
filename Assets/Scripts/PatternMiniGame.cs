@@ -68,7 +68,7 @@ public class PatternMiniGame : MiniGame
 
     public override void PlayGame()
     {
-        if (XCI.GetButtonDown(buttonToPress, player.PlayerController.controller))
+        if (XCI.GetButtonDown(buttonToPress, player.PlayerController.controller) && player.isAlive)
         {
             actionableObject.PatternButtonAnim.SetTrigger("white");
             if (stepsNumber == 0 && infiniteStepsNumber > 0)

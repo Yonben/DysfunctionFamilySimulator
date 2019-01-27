@@ -24,7 +24,7 @@ public class PlayableCharacter : MonoBehaviour
     [SerializeField] private SpriteRenderer needsSpriteRenderer;
     [HideInInspector] public List<Sprite> needsSprites;
 
-    private bool isAlive = true;
+    [HideInInspector] public bool isAlive = true;
 
     protected virtual void Awake()
     {
@@ -65,7 +65,7 @@ public class PlayableCharacter : MonoBehaviour
     {
         if (!isAlive) //you can die only once
             return;
-        isAlive = false;
+        
         
         print("player die, " + gameObject.name);
         //lock stress??
@@ -76,20 +76,28 @@ public class PlayableCharacter : MonoBehaviour
         // remove player control.
         enabledControl(false);
 
+        
+        isAlive = false;
+        
         //die on GameManager
         GameManager.instance.PlayerDie(this);
     }
 
     public void enabledMovement(bool enable = true)
     {
-        m_Rigidbody2D.constraints = enable ? RigidbodyConstraints2D.FreezeRotation : RigidbodyConstraints2D.FreezeAll;
-        PlayerController.canMove = enable;
+        if (isAlive)
+        {
+            m_Rigidbody2D.constraints =
+                enable ? RigidbodyConstraints2D.FreezeRotation : RigidbodyConstraints2D.FreezeAll;
+            PlayerController.canMove = enable;
+        }
     }
 
     private void enabledControl(bool enable = true)
     {
         enabledMovement(enable);
         //todo - also enable buttons.
+        PlayerController.enabled = false;
     }
 
     public void disableMovement()

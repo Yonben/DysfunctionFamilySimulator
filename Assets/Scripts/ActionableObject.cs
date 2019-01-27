@@ -195,7 +195,7 @@ public class ActionableObject : MonoBehaviour
             buttonInstance.SetActive(true);
             PatternButtonAnim.SetTrigger(MiniGame.ButtonAnimations[XboxButton.A]);
         }
-        else if (XCI.GetButtonDown(XboxButton.A, playableCharacter.PlayerController.controller))
+        else if (XCI.GetButtonDown(XboxButton.A, playableCharacter.PlayerController.controller) && playableCharacter.isAlive)
         {
             PatternButtonAnim.SetTrigger("white");
             if (CharPos)

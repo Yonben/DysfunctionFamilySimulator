@@ -41,7 +41,7 @@ public class GameManager : MonoBehaviour
 		DontDestroyOnLoad(gameObject);
 
 
-		playerAliveCount = players.Count;
+		playerAliveCount = 4;//players.Count;
 		GameOverText.enabled = false;
 		GameOverGO.SetActive(false);
 		Score = 0;
