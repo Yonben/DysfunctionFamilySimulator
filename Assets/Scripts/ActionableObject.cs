@@ -103,25 +103,29 @@ public class ActionableObject : MonoBehaviour
         
         ApplicableCharacters.Remove(playerType);
         
-        if (removeAllPlayer)
-        {
-            foreach (var key in _independentPenaltyBehvioursMap.Keys)
-            {
-                _independentPenaltyBehvioursMap[key].Off();
-                _independentPenaltyBehvioursMap.Remove(key);
-            }
-        }
-        else if (_independentPenaltyBehvioursMap.ContainsKey(playerType))
-        {
-            _independentPenaltyBehvioursMap[playerType].Off();
-            _independentPenaltyBehvioursMap.Remove(playerType);
-        }
-
-
         if (IsBroken)
         {
             IsBroken = false;
         }
+        else
+        {
+            if (removeAllPlayer)
+            {
+                foreach (var key in _independentPenaltyBehvioursMap.Keys)
+                {
+                    _independentPenaltyBehvioursMap[key].Off();
+                    _independentPenaltyBehvioursMap.Remove(key);
+                }
+            }
+            else if (_independentPenaltyBehvioursMap.ContainsKey(playerType))
+            {
+                _independentPenaltyBehvioursMap[playerType].Off();
+                _independentPenaltyBehvioursMap.Remove(playerType);
+            }
+        }
+
+
+
     }
 
     public void AddApplicableCharacter(GameManager.PlayerType playerType)
