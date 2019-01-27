@@ -332,14 +332,13 @@ GameObject:
   m_Component:
   - component: {fileID: 781265915181276592}
   - component: {fileID: 2348241259912452557}
-  - component: {fileID: 5329813561906537505}
+  - component: {fileID: 6825801386679125541}
   - component: {fileID: 4178012438447214574}
   - component: {fileID: 5702132828329603313}
   - component: {fileID: 9076012367049062726}
   - component: {fileID: 7215693996376987000}
   - component: {fileID: 4017614465058288734}
   - component: {fileID: 4086264592786547105}
-  - component: {fileID: 2255525825871187427}
   m_Layer: 0
   m_Name: Dog
   m_TagString: Untagged
@@ -411,7 +410,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 1
---- !u!114 &5329813561906537505
+--- !u!114 &6825801386679125541
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -420,7 +419,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6378146045476021247}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 014124e2bbc4d424d91882ea62a0a760, type: 3}
+  m_Script: {fileID: 11500000, guid: 1a746cdbcf625a4409e5fc3c6abd67f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   stress: 0
@@ -432,6 +431,11 @@ MonoBehaviour:
   PlayerType: 3
   needsSpriteRenderer: {fileID: 338655967359173094}
   needsSprites: []
+  poop: {fileID: 8594854800872219342, guid: fc155972f5275df42bad860c548cc534, type: 3}
+  poopIntervalTime: 0.1
+  poopTransform: {fileID: 525979373712624952}
+  stressToShowNeed: 80
+  poopNeedIcon: {fileID: 21300006, guid: 437840cd86e4eb34abc6855fff002477, type: 3}
 --- !u!114 &4178012438447214574
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -534,21 +538,6 @@ CapsuleCollider2D:
   m_Offset: {x: -0.5, y: 5}
   m_Size: {x: 75, y: 50}
   m_Direction: 1
---- !u!114 &2255525825871187427
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6378146045476021247}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b404e98932d44174a9a2b0ade4e6e71c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  poop: {fileID: 8594854800872219342, guid: fc155972f5275df42bad860c548cc534, type: 3}
-  poopIntervalTime: 10
-  poopTransform: {fileID: 525979373712624952}
 --- !u!1 &6725713741698316793
 GameObject:
   m_ObjectHideFlags: 0

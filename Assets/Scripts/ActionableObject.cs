@@ -15,8 +15,8 @@ public class ActionableObject : MonoBehaviour
         public MiniGame BrokenMiniGameScript;
         public int minBrokenTime;
         public int maxBrokenTime;
-        public PlayableCharacter dad;
-        public Sprite needIcon;
+//        public PlayableCharacter dad;
+//        public Sprite needIcon;
     }
     
     public bool isExplicit;
@@ -52,17 +52,17 @@ public class ActionableObject : MonoBehaviour
         {
             isBroken = value;
             _animator.SetBool("broken", isBroken);
-            if (isBroken)
-            {
-                if (!_brokenMiniGame.dad.needsSprites.Contains(_brokenMiniGame.needIcon))
-                {
-                    _brokenMiniGame.dad.needsSprites.Add(_brokenMiniGame.needIcon);
-                }
-            }
-            else
-            {
-                _brokenMiniGame.dad.needsSprites.Remove(_brokenMiniGame.needIcon);
-            }
+//            if (isBroken)
+//            {
+//                if (!_brokenMiniGame.dad.needsSprites.Contains(_brokenMiniGame.needIcon))
+//                {
+//                    _brokenMiniGame.dad.needsSprites.Add(_brokenMiniGame.needIcon);
+//                }
+//            }
+//            else
+//            {
+//                _brokenMiniGame.dad.needsSprites.Remove(_brokenMiniGame.needIcon);
+//            }
 
         }
     }

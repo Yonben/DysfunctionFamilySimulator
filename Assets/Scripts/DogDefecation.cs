@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class DogDefecation : MonoBehaviour
 {
+    private DogPlayableCharacter dogScript;
     [SerializeField] private GameObject poop;
 
     [SerializeField] private float poopIntervalTime;
@@ -18,22 +19,27 @@ public class DogDefecation : MonoBehaviour
     {
         _playerController = GetComponent<PlayerController>();
         _transform = transform;
+        dogScript = GetComponent<DogPlayableCharacter>();
     }
 
     private void Start()
     {
-        StartCoroutine(nameof(defecate));
+        StartCoroutine(nameof(defecateTimer));
     }
 
-    IEnumerator defecate()
+    IEnumerator defecateTimer()
     {
         while (true)
         {
             yield return new WaitForSeconds(poopIntervalTime);
-
-            Vector3 position = _transform.position;
-            position += _playerController.isRight ? poopTransform.localPosition : -poopTransform.localPosition;
-            Instantiate(poop, position, Quaternion.identity);
+            dogScript.ApplyStressImpact(1);
         }
+    }
+
+    private void defecate()
+    {
+        Vector3 position = _transform.position;
+        position += _playerController.isRight ? poopTransform.localPosition : -poopTransform.localPosition;
+        Instantiate(poop, position, Quaternion.identity);
     }
 }

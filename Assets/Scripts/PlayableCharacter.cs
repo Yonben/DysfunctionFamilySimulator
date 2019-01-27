@@ -8,23 +8,25 @@ using UnityEngine.UI;
 public class PlayableCharacter : MonoBehaviour
 {
 
-    [SerializeField] [Range(0, 100)] private int stress;
+    [SerializeField] [Range(0, 100)] protected int stress;
     [Range(0, 100)] private int stressMinThresholds;
-    [SerializeField] private int maxStress = 100;
+    [SerializeField] protected int maxStress = 100;
     [HideInInspector] public PlayerController PlayerController;
 
     private Rigidbody2D m_Rigidbody2D;
     public Animator m_animator;
     [HideInInspector] public SpriteRenderer spriteRenderer;
 
-    [SerializeField] private Slider stressSlider;
+    [SerializeField] protected Slider stressSlider;
 
     public GameManager.PlayerType PlayerType;
 
     [SerializeField] private SpriteRenderer needsSpriteRenderer;
     [HideInInspector] public List<Sprite> needsSprites;
 
-    private void Awake()
+    private bool isAlive = true;
+
+    protected virtual void Awake()
     {
         PlayerController = GetComponent<PlayerController>();
 
@@ -32,15 +34,16 @@ public class PlayableCharacter : MonoBehaviour
         m_animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
 
-        stressSlider.value = (float)(stress) / (float)maxStress;
+        stressSlider.maxValue = maxStress;
+        stressSlider.value = stress;
     }
 
-    private void Start()
+    protected virtual void Start()
     {
         StartCoroutine(nameof(needsHandler));
     }
 
-    private void Update()
+    protected virtual void Update()
     {
         m_animator.SetFloat("velocity", m_Rigidbody2D.velocity.magnitude);
     }
@@ -50,7 +53,7 @@ public class PlayableCharacter : MonoBehaviour
         stress += stressImpact;
         stress = Mathf.Max(stress, stressMinThresholds);
 
-        stressSlider.value = (float)(stress) / (float)maxStress;
+        stressSlider.value =stress;
 
         if (stress >= maxStress)
         {
@@ -58,8 +61,12 @@ public class PlayableCharacter : MonoBehaviour
         }
     }
 
-    private void Die()
+    protected virtual void Die()
     {
+        if (!isAlive) //you can die only once
+            return;
+        isAlive = false;
+        
         print("player die, " + gameObject.name);
         //lock stress??
 
@@ -119,7 +126,34 @@ public class PlayableCharacter : MonoBehaviour
             }
 
             needsSpriteRenderer.sprite = lastNeed;
-            yield return new WaitForSeconds(1f);
+//            yield return new WaitForSeconds(1f);
+//            YieldInstruction aa = new WaitForSeconds(1f);
+            yield return new WaitForSecondsOrListChange<Sprite>(1, needsSprites);
+        }
+    }
+    
+    public class WaitForSecondsOrListChange<T> : CustomYieldInstruction
+    {
+        internal float m_Seconds;
+        internal List<T> list;
+        internal float listStartCount;
+        internal float endTime;
+
+        public override bool keepWaiting
+        {
+            get
+            {
+                return !(list.Count != listStartCount || Time.realtimeSinceStartup >= endTime);
+            }
+        }
+
+        public WaitForSecondsOrListChange(float seconds, List<T> list)
+        {
+            this.m_Seconds = seconds;
+            this.list = list;
+
+            this.listStartCount = list.Count;
+            this.endTime = Time.realtimeSinceStartup + seconds;
         }
     }
 }
