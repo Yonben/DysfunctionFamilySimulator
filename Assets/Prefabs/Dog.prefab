@@ -431,11 +431,12 @@ MonoBehaviour:
   PlayerType: 3
   needsSpriteRenderer: {fileID: 338655967359173094}
   needsSprites: []
+  isAlive: 1
   poop: {fileID: 8594854800872219342, guid: fc155972f5275df42bad860c548cc534, type: 3}
   poopIntervalTime: 0.1
   poopTransform: {fileID: 525979373712624952}
   stressToShowNeed: 80
-  poopNeedIcon: {fileID: 21300006, guid: 437840cd86e4eb34abc6855fff002477, type: 3}
+  poopNeedIcon: {fileID: 21300004, guid: 437840cd86e4eb34abc6855fff002477, type: 3}
 --- !u!114 &4178012438447214574
 MonoBehaviour:
   m_ObjectHideFlags: 0

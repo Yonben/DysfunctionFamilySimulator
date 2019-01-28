@@ -403,7 +403,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isExplicit: 0
-  stressImpact: 2
+  stressImpact: 5
   hasGlobalImpact: 0
   PatternButtonPos: {fileID: 9158578847700596098}
   buttonInstance: {fileID: 0}
@@ -439,8 +439,8 @@ MonoBehaviour:
   desapireInEnter: 0
   objectAnimationEnter: 
   objectAnimationExit: 
-  playerAnimationEnter: 
-  playerAnimationExit: 
+  playerAnimationEnter: pickup
+  playerAnimationExit: unpickup
   objectAnimationEntered: 0
   playerAnimationEntered: 0
   inMiniGame: 0

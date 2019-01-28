@@ -2,10 +2,11 @@ fileFormatVersion: 2
 guid: 437840cd86e4eb34abc6855fff002477
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Stress Icons_0
-    21300002: Stress Icons_1
-    21300004: Stress Icons_2
-    21300006: Stress Icons_3
+    21300000: Stress Icons_1
+    21300002: Stress Icons_2
+    21300004: Stress Icons_3
+    21300006: Stress Icons_4
+    21300008: Stress Icons_0
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -110,7 +111,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Stress Icons_0
+      name: Stress Icons_1
       rect:
         serializedVersion: 2
         x: 0
@@ -130,7 +131,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Stress Icons_1
+      name: Stress Icons_2
       rect:
         serializedVersion: 2
         x: 0
@@ -150,7 +151,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Stress Icons_2
+      name: Stress Icons_3
       rect:
         serializedVersion: 2
         x: 0
@@ -170,7 +171,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Stress Icons_3
+      name: Stress Icons_4
       rect:
         serializedVersion: 2
         x: 0
@@ -185,6 +186,26 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 61807f5d544eadb4bab518b23ecde1b3
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Stress Icons_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 72
+        width: 12
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d71afc887df63d646bb45f945c8e1dc3
       vertices: []
       indices: 
       edges: []

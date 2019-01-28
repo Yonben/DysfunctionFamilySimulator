@@ -416,6 +416,7 @@ GameObject:
   - component: {fileID: 8524888613199161891}
   - component: {fileID: 8581175025194164585}
   - component: {fileID: 2804169841982275413}
+  - component: {fileID: 7126806730567666761}
   m_Layer: 0
   m_Name: HumanCharacter
   m_TagString: Untagged
@@ -507,6 +508,7 @@ MonoBehaviour:
   PlayerType: 0
   needsSpriteRenderer: {fileID: 5720380663204689053}
   needsSprites: []
+  isAlive: 1
 --- !u!114 &8524888613199161892
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -558,7 +560,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   penalty: 0
   penaltyTimeRate: 0
-  needIcon: {fileID: 21300004, guid: 437840cd86e4eb34abc6855fff002477, type: 3}
+  needIcon: {fileID: 21300002, guid: 437840cd86e4eb34abc6855fff002477, type: 3}
   distanceToBeSmelly: 0
   _actionableObject: {fileID: 0}
 --- !u!114 &2804169841982275413
@@ -575,7 +577,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   penalty: 1
   penaltyTimeRate: 1
-  needIcon: {fileID: 21300000, guid: 437840cd86e4eb34abc6855fff002477, type: 3}
+  needIcon: {fileID: 21300008, guid: 437840cd86e4eb34abc6855fff002477, type: 3}
   maxTimeToBeHungry: 20
   minTimeToBeHungry: 10
+  _actionableObject: {fileID: 0}
+--- !u!114 &7126806730567666761
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8524888613199161889}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4aff01d4b5f47784ba5272ad24d78712, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  penalty: 1
+  penaltyTimeRate: 1
+  needIcon: {fileID: 21300000, guid: 437840cd86e4eb34abc6855fff002477, type: 3}
+  maxTimeToBeToilety: 20
+  minTimeToBeToilety: 10
   _actionableObject: {fileID: 0}
