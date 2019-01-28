@@ -253,12 +253,12 @@ PrefabInstance:
     - target: {fileID: 2694832174143450633, guid: 4f4139a1115877a43ac8f74ab441b2f5,
         type: 3}
       propertyPath: penalty
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2694832174143450633, guid: 4f4139a1115877a43ac8f74ab441b2f5,
         type: 3}
       propertyPath: penaltyTimeRate
-      value: 1
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 2694832174143450633, guid: 4f4139a1115877a43ac8f74ab441b2f5,
         type: 3}
@@ -270,6 +270,16 @@ PrefabInstance:
       propertyPath: _actionableObject
       value: 
       objectReference: {fileID: 1892651509}
+    - target: {fileID: 8402005175254691893, guid: 4f4139a1115877a43ac8f74ab441b2f5,
+        type: 3}
+      propertyPath: maxTimeToBeHungry
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 8402005175254691893, guid: 4f4139a1115877a43ac8f74ab441b2f5,
+        type: 3}
+      propertyPath: penaltyTimeRate
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 4783575123097386056, guid: 4f4139a1115877a43ac8f74ab441b2f5,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -300,11 +310,31 @@ PrefabInstance:
       propertyPath: m_LinearDrag
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2611524468903020580, guid: 4f4139a1115877a43ac8f74ab441b2f5,
+        type: 3}
+      propertyPath: maxStress
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 3500425402644595497, guid: 4f4139a1115877a43ac8f74ab441b2f5,
         type: 3}
       propertyPath: _actionableObject
       value: 
       objectReference: {fileID: 2087241081}
+    - target: {fileID: 3500425402644595497, guid: 4f4139a1115877a43ac8f74ab441b2f5,
+        type: 3}
+      propertyPath: minTimeToBeToilety
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 3500425402644595497, guid: 4f4139a1115877a43ac8f74ab441b2f5,
+        type: 3}
+      propertyPath: maxTimeToBeToilety
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 3500425402644595497, guid: 4f4139a1115877a43ac8f74ab441b2f5,
+        type: 3}
+      propertyPath: penaltyTimeRate
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4f4139a1115877a43ac8f74ab441b2f5, type: 3}
 --- !u!1 &216665004
@@ -1232,6 +1262,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dad
       objectReference: {fileID: 0}
+    - target: {fileID: 1927244722928950020, guid: dc5661be747ae7a44853a52754e99fdb,
+        type: 3}
+      propertyPath: maxStress
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 1927244723590821478, guid: dc5661be747ae7a44853a52754e99fdb,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1320,17 +1355,17 @@ PrefabInstance:
     - target: {fileID: 2010570140680502569, guid: dc5661be747ae7a44853a52754e99fdb,
         type: 3}
       propertyPath: penalty
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2010570140680502569, guid: dc5661be747ae7a44853a52754e99fdb,
-        type: 3}
-      propertyPath: penaltyTimeRate
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2010570140680502569, guid: dc5661be747ae7a44853a52754e99fdb,
         type: 3}
+      propertyPath: penaltyTimeRate
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2010570140680502569, guid: dc5661be747ae7a44853a52754e99fdb,
+        type: 3}
       propertyPath: distanceToBeSmelly
-      value: 1000
+      value: 750
       objectReference: {fileID: 0}
     - target: {fileID: 6957420324993801654, guid: dc5661be747ae7a44853a52754e99fdb,
         type: 3}
@@ -1375,17 +1410,17 @@ PrefabInstance:
     - target: {fileID: 5339833499246732053, guid: dc5661be747ae7a44853a52754e99fdb,
         type: 3}
       propertyPath: minTimeToBeHungry
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 5339833499246732053, guid: dc5661be747ae7a44853a52754e99fdb,
-        type: 3}
-      propertyPath: maxTimeToBeHungry
       value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 5339833499246732053, guid: dc5661be747ae7a44853a52754e99fdb,
         type: 3}
+      propertyPath: maxTimeToBeHungry
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 5339833499246732053, guid: dc5661be747ae7a44853a52754e99fdb,
+        type: 3}
       propertyPath: penaltyTimeRate
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5339833499246732053, guid: dc5661be747ae7a44853a52754e99fdb,
         type: 3}
@@ -1432,6 +1467,21 @@ PrefabInstance:
       propertyPath: _actionableObject
       value: 
       objectReference: {fileID: 2087241081}
+    - target: {fileID: 1015296930654916617, guid: dc5661be747ae7a44853a52754e99fdb,
+        type: 3}
+      propertyPath: penaltyTimeRate
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1015296930654916617, guid: dc5661be747ae7a44853a52754e99fdb,
+        type: 3}
+      propertyPath: minTimeToBeToilety
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 1015296930654916617, guid: dc5661be747ae7a44853a52754e99fdb,
+        type: 3}
+      propertyPath: maxTimeToBeToilety
+      value: 30
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dc5661be747ae7a44853a52754e99fdb, type: 3}
 --- !u!1 &982875622
@@ -2351,6 +2401,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LinearDrag
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6825801386679125541, guid: 8e1f23742592da549b9e90ff599d4ec2,
+        type: 3}
+      propertyPath: maxStress
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 6825801386679125541, guid: 8e1f23742592da549b9e90ff599d4ec2,
+        type: 3}
+      propertyPath: stressToShowNeed
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 6825801386679125541, guid: 8e1f23742592da549b9e90ff599d4ec2,
+        type: 3}
+      propertyPath: poopIntervalTime
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4017614465058288734, guid: 8e1f23742592da549b9e90ff599d4ec2,
+        type: 3}
+      propertyPath: stressToReduce
+      value: -1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8e1f23742592da549b9e90ff599d4ec2, type: 3}
@@ -3498,12 +3568,12 @@ PrefabInstance:
     - target: {fileID: 1037512984688424543, guid: adb11c4a6cc9d18479cbccca90be7d84,
         type: 3}
       propertyPath: penalty
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1037512984688424543, guid: adb11c4a6cc9d18479cbccca90be7d84,
         type: 3}
       propertyPath: penaltyTimeRate
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1037512984688424543, guid: adb11c4a6cc9d18479cbccca90be7d84,
         type: 3}
@@ -3515,6 +3585,11 @@ PrefabInstance:
       propertyPath: _actionableObject
       value: 
       objectReference: {fileID: 1892651509}
+    - target: {fileID: 6888783624672700515, guid: adb11c4a6cc9d18479cbccca90be7d84,
+        type: 3}
+      propertyPath: penaltyTimeRate
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 7593815811860800542, guid: adb11c4a6cc9d18479cbccca90be7d84,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -3570,11 +3645,31 @@ PrefabInstance:
       propertyPath: m_LinearDrag
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1098302914995998834, guid: adb11c4a6cc9d18479cbccca90be7d84,
+        type: 3}
+      propertyPath: maxStress
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 1987223635651910527, guid: adb11c4a6cc9d18479cbccca90be7d84,
         type: 3}
       propertyPath: _actionableObject
       value: 
       objectReference: {fileID: 2087241081}
+    - target: {fileID: 1987223635651910527, guid: adb11c4a6cc9d18479cbccca90be7d84,
+        type: 3}
+      propertyPath: minTimeToBeToilety
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 1987223635651910527, guid: adb11c4a6cc9d18479cbccca90be7d84,
+        type: 3}
+      propertyPath: maxTimeToBeToilety
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 1987223635651910527, guid: adb11c4a6cc9d18479cbccca90be7d84,
+        type: 3}
+      propertyPath: penaltyTimeRate
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: adb11c4a6cc9d18479cbccca90be7d84, type: 3}
 --- !u!4 &1892651507 stripped

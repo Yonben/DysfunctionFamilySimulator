@@ -558,8 +558,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d689ac2d5355ded44b0f93def631efa4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  penalty: 0
-  penaltyTimeRate: 0
+  penalty: 1
+  penaltyTimeRate: 1
   needIcon: {fileID: 21300002, guid: 437840cd86e4eb34abc6855fff002477, type: 3}
   distanceToBeSmelly: 0
   _actionableObject: {fileID: 0}
