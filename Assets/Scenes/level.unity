@@ -2269,7 +2269,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isExplicit: 0
-  stressImpact: -1
+  stressImpact: -5
   hasGlobalImpact: 0
   PatternButtonPos: {fileID: 373026870}
   buttonInstance: {fileID: 0}
@@ -3954,7 +3954,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isExplicit: 0
-  stressImpact: -1
+  stressImpact: -5
   hasGlobalImpact: 0
   PatternButtonPos: {fileID: 579495786}
   buttonInstance: {fileID: 0}
