@@ -90,7 +90,10 @@ public class ActionableObject : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        playerMoveInFixPos += () => currentMiniGameInPlay.EndMiniGame();
+        playerMoveInFixPos = () =>
+        {
+            if (currentMiniGameInPlay) currentMiniGameInPlay.EndMiniGame();
+        };
         if (!buttonInstance)
             buttonInstance = (GameObject)Instantiate(PatternButton, PatternButtonPos.position, Quaternion.identity);
         PatternButtonAnim = buttonInstance.GetComponent<Animator>();
