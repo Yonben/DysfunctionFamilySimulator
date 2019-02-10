@@ -118,11 +118,12 @@ public class ActionableObject : MonoBehaviour
         {
             if (removeAllPlayer)
             {
-                foreach (var key in _independentPenaltyBehvioursMap.Keys)
+                foreach (GameManager.PlayerType key in _independentPenaltyBehvioursMap.Keys)
                 {
                     _independentPenaltyBehvioursMap[key].Off();
-                    _independentPenaltyBehvioursMap.Remove(key);
+//                    _independentPenaltyBehvioursMap.Remove(key);
                 }
+                _independentPenaltyBehvioursMap.Clear();
             }
             else if (_independentPenaltyBehvioursMap.ContainsKey(playerType))
             {
@@ -229,10 +230,11 @@ public class ActionableObject : MonoBehaviour
             return;
         print("trigger exit");
         PlayableCharacter playableCharacter_temp = other.GetComponent<PlayableCharacter>();
-        if (playableCharacter_temp && ApplicableCharacters.Contains(playableCharacter_temp.PlayerType) && currentMiniGameInPlay.player == playableCharacter_temp)
+        if (playableCharacter_temp && currentMiniGameInPlay && !currentMiniGameInPlay.player) //ApplicableCharacters.Contains(playableCharacter_temp.PlayerType) && 
         {
-//            buttonInstance.SetActive(false);
+            buttonInstance.SetActive(false);
             currentMiniGameInPlay.EndMiniGame(triggerExit: true);
+            currentMiniGameInPlay = null;
         }
     }
 
