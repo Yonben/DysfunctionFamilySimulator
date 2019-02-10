@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Analytics;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 [RequireComponent(typeof(PlayerController))]
@@ -100,18 +101,19 @@ public class PlayableCharacter : MonoBehaviour
         PlayerController.enabled = false;
     }
 
-    public void disableMovement()
+    public void disableMovement(UnityAction afterMovement = null)
     {
         enabledMovement(false);
-        StartCoroutine(nameof(enableMovement));
+        StartCoroutine(nameof(enableMovement), afterMovement);
         
     }
     
-    IEnumerator enableMovement() 
+    IEnumerator enableMovement(UnityAction afterMovement = null) 
     {
         yield return new WaitForSeconds(0.5f);
         yield return new WaitUntil(() => PlayerController.isTryMoove());
         enabledMovement(true);
+        afterMovement.Invoke();
     }
 
     IEnumerator needsHandler()

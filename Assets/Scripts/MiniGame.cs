@@ -75,6 +75,10 @@ public abstract class MiniGame : MonoBehaviour
 
     public virtual void EndMiniGame(bool miniGameSuccess = false, bool triggerExit = false)
     {
+        if(actionableObject!= null && actionableObject.PatternButtonAnim != null)
+            actionableObject.buttonInstance.SetActive(false);
+        
+        actionableObject.currentMiniGameInPlay = null;
         inMiniGame = false;
         
         // If we succeeded the mini game, end the minigame, call success on actionable and apply stress impact

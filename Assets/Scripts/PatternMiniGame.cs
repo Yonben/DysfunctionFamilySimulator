@@ -67,12 +67,6 @@ public class PatternMiniGame : MiniGame
 
         currentButtonIndex = 0;
         infiniteStepsCount = 0;
-        if(actionableObject!= null && actionableObject.PatternButtonAnim != null)
-            actionableObject.buttonInstance.SetActive(false);
-//        if (actionableObject.buttonInstance)
-//        {
-//            Destroy(actionableObject.buttonInstance);
-//        }
     }
 
     public override void PlayGame()

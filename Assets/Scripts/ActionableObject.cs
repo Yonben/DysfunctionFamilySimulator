@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using XboxCtrlrInput;
 
 public class ActionableObject : MonoBehaviour
@@ -31,11 +32,14 @@ public class ActionableObject : MonoBehaviour
     public Transform CharExitMiniGamePos;
     public bool CharFacingRight = true;
     public List<GameManager.PlayerType> ApplicableCharacters;
+    
+    private UnityAction playerMoveInFixPos;
 
     public Sprite idleState;
     public Sprite needsActionState;
 
     public MiniGame MiniGameScript;
+    [HideInInspector] internal MiniGame currentMiniGameInPlay;
 
 //    private PlayableCharacter playableCharacter;
 
@@ -86,6 +90,7 @@ public class ActionableObject : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        playerMoveInFixPos += () => currentMiniGameInPlay.EndMiniGame();
         if (!buttonInstance)
             buttonInstance = (GameObject)Instantiate(PatternButton, PatternButtonPos.position, Quaternion.identity);
         PatternButtonAnim = buttonInstance.GetComponent<Animator>();
@@ -176,17 +181,21 @@ public class ActionableObject : MonoBehaviour
         {
             if (ApplicableCharacters.Contains(playableCharacter_temp.PlayerType))
             {
-                EnterMiniGame(MiniGameScript, playableCharacter_temp);
+                currentMiniGameInPlay = MiniGameScript;
+                
             }
         }
         else
         {
             if (playableCharacter_temp.PlayerType == GameManager.PlayerType.Dad)
             {
-                EnterMiniGame(_brokenMiniGame.BrokenMiniGameScript, playableCharacter_temp);
+                currentMiniGameInPlay = _brokenMiniGame.BrokenMiniGameScript;
             }
         }
+        if (currentMiniGameInPlay)
+            EnterMiniGame(currentMiniGameInPlay, playableCharacter_temp);
     }
+
 
     private void EnterMiniGame(MiniGame miniGameToEnter, PlayableCharacter playableCharacter)
     {
@@ -201,7 +210,7 @@ public class ActionableObject : MonoBehaviour
             if (CharPos)
             {
 //                if (!miniGameToEnter.desapireInEnter)
-                playableCharacter.disableMovement();
+                playableCharacter.disableMovement(playerMoveInFixPos);
                 playableCharacter.transform.position = CharPos.position;
                 playableCharacter.PlayerController.isRight = CharFacingRight;
                 stickTime = Time.fixedTime;
@@ -223,8 +232,8 @@ public class ActionableObject : MonoBehaviour
         PlayableCharacter playableCharacter_temp = other.GetComponent<PlayableCharacter>();
         if (playableCharacter_temp && ApplicableCharacters.Contains(playableCharacter_temp.PlayerType))
         {
-            buttonInstance.SetActive(false);
-            MiniGameScript.EndMiniGame(triggerExit: true);
+//            buttonInstance.SetActive(false);
+            currentMiniGameInPlay.EndMiniGame(triggerExit: true);
         }
     }
 
