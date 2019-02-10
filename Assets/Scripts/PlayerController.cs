@@ -68,8 +68,8 @@ public class PlayerController : MonoBehaviour
 		if (targetHorizontalVelocity != 0)
 		{
 			isRight = targetHorizontalVelocity > 0;
-			_spriteRenderer.flipX = !isRight;
 		}
+		_spriteRenderer.flipX = !isRight;
 	}
 
 	public bool isTryMoove()
