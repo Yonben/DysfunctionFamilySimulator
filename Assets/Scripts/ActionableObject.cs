@@ -182,7 +182,7 @@ public class ActionableObject : MonoBehaviour
             if (ApplicableCharacters.Contains(playableCharacter_temp.PlayerType))
             {
                 currentMiniGameInPlay = MiniGameScript;
-                
+                EnterMiniGame(currentMiniGameInPlay, playableCharacter_temp);
             }
         }
         else
@@ -190,10 +190,9 @@ public class ActionableObject : MonoBehaviour
             if (playableCharacter_temp.PlayerType == GameManager.PlayerType.Dad)
             {
                 currentMiniGameInPlay = _brokenMiniGame.BrokenMiniGameScript;
+                EnterMiniGame(currentMiniGameInPlay, playableCharacter_temp);
             }
         }
-        if (currentMiniGameInPlay)
-            EnterMiniGame(currentMiniGameInPlay, playableCharacter_temp);
     }
 
 
