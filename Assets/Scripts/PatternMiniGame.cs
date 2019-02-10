@@ -49,7 +49,16 @@ public class PatternMiniGame : MiniGame
         }
         if(!actionableObject.PatternButtonAnim)
             print("error in " + gameObject.name);
+        
+        Invoke(nameof(setButtonToPress), 2/60f);
+//        actionableObject.PatternButtonAnim.SetTrigger(MiniGame.ButtonAnimations[buttonToPress]);
+//        Debug.Log("SetTrigger " + MiniGame.ButtonAnimations[buttonToPress]);
+    }
+
+    private void setButtonToPress()
+    {
         actionableObject.PatternButtonAnim.SetTrigger(MiniGame.ButtonAnimations[buttonToPress]);
+        Debug.Log("SetTrigger " + MiniGame.ButtonAnimations[buttonToPress]);
     }
 
     public override void EndMiniGame(bool miniGameSuccess = false, bool triggerExit = false)
