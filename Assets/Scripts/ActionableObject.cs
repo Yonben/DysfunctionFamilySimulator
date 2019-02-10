@@ -109,9 +109,8 @@ public class ActionableObject : MonoBehaviour
     {
         // Reset Actionable state
         print("OnMiniGameSuccess");
-//        _independentPenaltyBehviour.Off();
+//        _independentPenaltyBehviour.Off();    
         
-        ApplicableCharacters.Remove(playerType);
         
         if (IsBroken)
         {
@@ -119,12 +118,13 @@ public class ActionableObject : MonoBehaviour
         }
         else
         {
+            ApplicableCharacters.Remove(playerType);
+            
             if (removeAllPlayer)
             {
                 foreach (GameManager.PlayerType key in _independentPenaltyBehvioursMap.Keys)
                 {
                     _independentPenaltyBehvioursMap[key].Off();
-//                    _independentPenaltyBehvioursMap.Remove(key);
                 }
                 _independentPenaltyBehvioursMap.Clear();
             }
