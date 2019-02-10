@@ -166,7 +166,7 @@ public class ActionableObject : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D other)
     {
-        if (MiniGameScript.inMiniGame)
+        if (MiniGameScript.inMiniGame || (_brokenMiniGame.CanBeBroke && _brokenMiniGame.BrokenMiniGameScript.inMiniGame))
             return;
         PlayableCharacter playableCharacter_temp = other.GetComponent<PlayableCharacter>();
 
