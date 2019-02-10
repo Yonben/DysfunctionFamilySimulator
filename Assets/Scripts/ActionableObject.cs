@@ -35,8 +35,8 @@ public class ActionableObject : MonoBehaviour
     
     private UnityAction playerMoveInFixPos;
 
-    public Sprite idleState;
-    public Sprite needsActionState;
+//    public Sprite idleState;
+//    public Sprite needsActionState;
 
     public MiniGame MiniGameScript;
     [HideInInspector] internal MiniGame currentMiniGameInPlay;
@@ -230,7 +230,7 @@ public class ActionableObject : MonoBehaviour
             return;
         print("trigger exit");
         PlayableCharacter playableCharacter_temp = other.GetComponent<PlayableCharacter>();
-        if (playableCharacter_temp && ApplicableCharacters.Contains(playableCharacter_temp.PlayerType))
+        if (playableCharacter_temp && ApplicableCharacters.Contains(playableCharacter_temp.PlayerType) && currentMiniGameInPlay.player == playableCharacter_temp)
         {
 //            buttonInstance.SetActive(false);
             currentMiniGameInPlay.EndMiniGame(triggerExit: true);

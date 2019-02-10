@@ -15,7 +15,7 @@ public abstract class MiniGame : MonoBehaviour
     public bool playerAnimationEntered;
     
     protected ActionableObject actionableObject;
-    protected PlayableCharacter player;
+    public PlayableCharacter player;
     private bool isPlaying = false;
 
     [HideInInspector] public bool inMiniGame = false;
@@ -119,5 +119,7 @@ public abstract class MiniGame : MonoBehaviour
                 player.transform.position = actionableObject.CharExitMiniGamePos.transform.position;
             }
         }
+
+        player = null;
     }
 }
