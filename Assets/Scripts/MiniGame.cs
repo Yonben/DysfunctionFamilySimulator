@@ -124,6 +124,8 @@ public abstract class MiniGame : MonoBehaviour
                 }
                 
             }
+            
+            player.currentMiniGame = null;
         }
         
         
@@ -132,7 +134,7 @@ public abstract class MiniGame : MonoBehaviour
             actionableObject.OnMiniGameEnd(player, miniGameSuccess);
         }
 
-        player.currentMiniGame = null;
+        
         player = null;
     }
 }
