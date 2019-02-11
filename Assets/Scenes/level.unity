@@ -3596,11 +3596,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Mum Variant
       objectReference: {fileID: 0}
-    - target: {fileID: 1098302914995998834, guid: adb11c4a6cc9d18479cbccca90be7d84,
-        type: 3}
-      propertyPath: maxStress
-      value: 20
-      objectReference: {fileID: 0}
     - target: {fileID: 1098302914617785616, guid: adb11c4a6cc9d18479cbccca90be7d84,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3699,7 +3694,7 @@ PrefabInstance:
     - target: {fileID: 1098302914617785618, guid: adb11c4a6cc9d18479cbccca90be7d84,
         type: 3}
       propertyPath: controller
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1098302914617785618, guid: adb11c4a6cc9d18479cbccca90be7d84,
         type: 3}
@@ -3740,6 +3735,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LinearDrag
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1098302914995998834, guid: adb11c4a6cc9d18479cbccca90be7d84,
+        type: 3}
+      propertyPath: maxStress
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 1987223635651910527, guid: adb11c4a6cc9d18479cbccca90be7d84,
         type: 3}
