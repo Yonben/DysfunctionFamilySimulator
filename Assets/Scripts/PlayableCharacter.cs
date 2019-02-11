@@ -85,6 +85,8 @@ public class PlayableCharacter : MonoBehaviour
         //die on GameManager
         GameManager.instance.PlayerDie(this);
         
+        if(currentMiniGame)
+            currentMiniGame.EndMiniGame();
         
         Invoke(nameof(RemovePlayer), 18/60f);
     }
