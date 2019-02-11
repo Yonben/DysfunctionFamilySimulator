@@ -72,7 +72,7 @@ public class PlayableCharacter : MonoBehaviour
         //lock stress??
 
         //remove the player visually with animation
-        //todo
+        m_animator.SetTrigger("die");
 
         // remove player control.
         enabledControl(false);
@@ -82,6 +82,8 @@ public class PlayableCharacter : MonoBehaviour
         
         //die on GameManager
         GameManager.instance.PlayerDie(this);
+        
+        gameObject.SetActive(false);
     }
 
     public void enabledMovement(bool enable = true)
