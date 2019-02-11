@@ -51,6 +51,8 @@ public abstract class MiniGame : MonoBehaviour
         actionableObject = actionable;
         player = initiator;
         isPlaying = true;
+
+        player.currentMiniGame = this;
         
         if (!objectAnimationEnter.Equals("") && !objectAnimationEntered)
         {
@@ -130,6 +132,7 @@ public abstract class MiniGame : MonoBehaviour
             actionableObject.OnMiniGameEnd(player, miniGameSuccess);
         }
 
+        player.currentMiniGame = null;
         player = null;
     }
 }

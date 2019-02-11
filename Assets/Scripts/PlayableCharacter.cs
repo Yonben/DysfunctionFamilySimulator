@@ -9,6 +9,8 @@ using UnityEngine.UI;
 public class PlayableCharacter : MonoBehaviour
 {
 
+    [HideInInspector] public MiniGame currentMiniGame;
+    
     [SerializeField] [Range(0, 100)] protected int stress;
     [Range(0, 100)] private int stressMinThresholds;
     [SerializeField] protected int maxStress = 100;
