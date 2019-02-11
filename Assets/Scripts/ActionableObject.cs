@@ -1,12 +1,18 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using XboxCtrlrInput;
+using Random = UnityEngine.Random;
 
 public class ActionableObject : MonoBehaviour
 {
 
+    enum State {IDLE, READY, MINIGAME};
+
+    private State state = State.IDLE;
+    
     private Animator _animator;
     
     [System.Serializable]
@@ -32,6 +38,8 @@ public class ActionableObject : MonoBehaviour
     public Transform CharExitMiniGamePos;
     public bool CharFacingRight = true;
     public List<GameManager.PlayerType> ApplicableCharacters;
+
+    [SerializeField] private String fromIdleToReadyStateAnimation;
     
     private UnityAction playerMoveInFixPos;
 
@@ -72,8 +80,8 @@ public class ActionableObject : MonoBehaviour
     }
 
 
-    private Dictionary<GameManager.PlayerType, IndependentPenaltyBehviour> _independentPenaltyBehvioursMap =
-        new Dictionary<GameManager.PlayerType, IndependentPenaltyBehviour>();
+    private Dictionary<GameManager.PlayerType, PenaltyBehaviour> _PenaltyBehavioursMap =
+        new Dictionary<GameManager.PlayerType, PenaltyBehaviour>();
 //    private IndependentPenaltyBehviour _independentPenaltyBehviour;
 
 
@@ -105,6 +113,26 @@ public class ActionableObject : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+        switch (state)
+        {
+            case State.IDLE:
+                if (ApplicableCharacters.Count > 0)
+                {
+                    state = State.READY;
+                    _animator.SetTrigger(fromIdleToReadyStateAnimation);
+                }
+                break;
+            case State.READY:
+                break;
+            case State.MINIGAME:
+                break;
+            default:
+                throw new ArgumentOutOfRangeException();
+        }
+    }
+
     public void OnMiniGameSuccess(GameManager.PlayerType playerType)
     {
         // Reset Actionable state
@@ -122,16 +150,16 @@ public class ActionableObject : MonoBehaviour
             
             if (removeAllPlayer)
             {
-                foreach (GameManager.PlayerType key in _independentPenaltyBehvioursMap.Keys)
+                foreach (GameManager.PlayerType key in _PenaltyBehavioursMap.Keys)
                 {
-                    _independentPenaltyBehvioursMap[key].Off();
+                    _PenaltyBehavioursMap[key].Off();
                 }
-                _independentPenaltyBehvioursMap.Clear();
+                _PenaltyBehavioursMap.Clear();
             }
-            else if (_independentPenaltyBehvioursMap.ContainsKey(playerType))
+            else if (_PenaltyBehavioursMap.ContainsKey(playerType))
             {
-                _independentPenaltyBehvioursMap[playerType].Off();
-                _independentPenaltyBehvioursMap.Remove(playerType);
+                _PenaltyBehavioursMap[playerType].Off();
+                _PenaltyBehavioursMap.Remove(playerType);
             }
         }
 
@@ -139,9 +167,20 @@ public class ActionableObject : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
 
-
-
+    public void OnMiniGameEnd(PlayableCharacter player, bool miniGameSuccess)
+    {
+        if (miniGameSuccess)
+        {
+            OnMiniGameSuccess(player.PlayerType);
+            player.ApplyStressImpact(stressImpact);
+        }
+        
+        if(PatternButtonAnim)
+            buttonInstance.SetActive(false);
+        currentMiniGameInPlay = null;
+        state = State.IDLE;
     }
 
     public void AddApplicableCharacter(GameManager.PlayerType playerType)
@@ -149,10 +188,10 @@ public class ActionableObject : MonoBehaviour
         ApplicableCharacters.Add(playerType);
     }
 
-    public void AddApplicableCharacter(GameManager.PlayerType playerType, IndependentPenaltyBehviour independentPenaltyBehviour)
+    public void AddApplicableCharacter(GameManager.PlayerType playerType, PenaltyBehaviour penaltyBehaviour)
     {
         AddApplicableCharacter(playerType);
-        _independentPenaltyBehvioursMap.Add(playerType, independentPenaltyBehviour);
+        _PenaltyBehavioursMap.Add(playerType, penaltyBehaviour);
 //        _independentPenaltyBehviour = independentPenaltyBehviour;
     }
 
@@ -183,7 +222,7 @@ public class ActionableObject : MonoBehaviour
             return;
         if (!IsBroken)
         {
-            if (ApplicableCharacters.Contains(playableCharacter_temp.PlayerType))
+            if (state == State.READY && ApplicableCharacters.Contains(playableCharacter_temp.PlayerType))
             {
                 currentMiniGameInPlay = MiniGameScript;
                 EnterMiniGame(currentMiniGameInPlay, playableCharacter_temp);
@@ -218,6 +257,8 @@ public class ActionableObject : MonoBehaviour
                 playableCharacter.PlayerController.isRight = CharFacingRight;
                 stickTime = Time.fixedTime;
             }
+
+            state = State.MINIGAME;
             miniGameToEnter.StartMiniGame(this, playableCharacter);
         }
        
@@ -235,9 +276,8 @@ public class ActionableObject : MonoBehaviour
         PlayableCharacter playableCharacter_temp = other.GetComponent<PlayableCharacter>();
         if (playableCharacter_temp && currentMiniGameInPlay && !currentMiniGameInPlay.player) //ApplicableCharacters.Contains(playableCharacter_temp.PlayerType) && 
         {
-            buttonInstance.SetActive(false);
             currentMiniGameInPlay.EndMiniGame(triggerExit: true);
-            currentMiniGameInPlay = null;
+            OnMiniGameEnd(null, false);
         }
     }
 
