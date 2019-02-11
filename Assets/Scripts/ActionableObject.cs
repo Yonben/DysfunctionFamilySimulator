@@ -121,7 +121,8 @@ public class ActionableObject : MonoBehaviour
                 if (ApplicableCharacters.Count > 0)
                 {
                     state = State.READY;
-                    _animator.SetTrigger(fromIdleToReadyStateAnimation);
+                    if (_animator)
+                        _animator.SetTrigger(fromIdleToReadyStateAnimation);
                 }
                 break;
             case State.READY:

@@ -77,10 +77,7 @@ public abstract class MiniGame : MonoBehaviour
     {
         
 
-        if (actionableObject)
-        {
-            actionableObject.OnMiniGameEnd(player, miniGameSuccess);
-        }
+        
 
         inMiniGame = false;
         
@@ -115,6 +112,12 @@ public abstract class MiniGame : MonoBehaviour
             {
                 player.transform.position = actionableObject.CharExitMiniGamePos.transform.position;
             }
+        }
+        
+        
+        if (actionableObject)
+        {
+            actionableObject.OnMiniGameEnd(player, miniGameSuccess);
         }
 
         player = null;
