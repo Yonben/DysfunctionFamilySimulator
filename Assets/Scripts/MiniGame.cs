@@ -119,7 +119,7 @@ public abstract class MiniGame : MonoBehaviour
                 }
                 else
                 {
-                    
+                    if (actionableObject.CharExitMiniGamePos)
                         player.transform.position = actionableObject.CharExitMiniGamePos.transform.position;
                 }
                 
