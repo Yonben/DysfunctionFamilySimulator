@@ -53,10 +53,15 @@ public class GameManager : MonoBehaviour
 		playerAliveCount--;
 		if (playerAliveCount <= 1) //1 because of the dog that can't die
 		{
-			//todo
-			GameOverText.enabled = true;
-			GameOverGO.SetActive(true);
+			Invoke(nameof(GameOver), 2);
+			
 		}
+	}
+
+	private void GameOver()
+	{
+		GameOverText.enabled = true;
+		GameOverGO.SetActive(true);
 	}
 	
 }
