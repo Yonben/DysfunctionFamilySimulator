@@ -47,6 +47,11 @@ public class GameManager : MonoBehaviour
 		Score = 0;
 	}
 
+	private void Start()
+	{
+		StartCoroutine(nameof(getIntervalPoints));
+	}
+
 
 	public void PlayerDie(PlayableCharacter player)
 	{
@@ -62,6 +67,16 @@ public class GameManager : MonoBehaviour
 	{
 		GameOverText.enabled = true;
 		GameOverGO.SetActive(true);
+	}
+
+	IEnumerator getIntervalPoints()
+	{
+		yield return new WaitForSeconds(2f);
+		while (!GameOverGO.activeSelf)
+		{
+			Score += 1;
+			yield return new WaitForSeconds(2f);
+		}
 	}
 	
 }
