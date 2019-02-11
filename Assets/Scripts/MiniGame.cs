@@ -108,9 +108,19 @@ public abstract class MiniGame : MonoBehaviour
                 player.spriteRenderer.enabled = true;
             }
 
-            if (!triggerExit && actionableObject.CharExitMiniGamePos)
+            if (!triggerExit)
             {
-                player.transform.position = actionableObject.CharExitMiniGamePos.transform.position;
+                if (actionableObject.IsBroken)
+                {
+                    if (actionableObject._brokenMiniGame.CharExitMiniGamePos)
+                        player.transform.position = actionableObject._brokenMiniGame.CharExitMiniGamePos.transform.position;
+                }
+                else
+                {
+                    
+                        player.transform.position = actionableObject.CharExitMiniGamePos.transform.position;
+                }
+                
             }
         }
         

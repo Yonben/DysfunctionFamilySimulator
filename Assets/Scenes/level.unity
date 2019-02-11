@@ -723,6 +723,9 @@ MonoBehaviour:
     BrokenMiniGameScript: {fileID: 0}
     minBrokenTime: 0
     maxBrokenTime: 0
+    CharPos: {fileID: 0}
+    CharExitMiniGamePos: {fileID: 0}
+    CharFacingRight: 0
   isDogPoop: 0
 --- !u!114 &411561246
 MonoBehaviour:
@@ -1944,6 +1947,31 @@ PrefabInstance:
       propertyPath: removeAllPlayer
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6789041258257831890, guid: f91b88110c0134e38aaec3c0e6a6e88c,
+        type: 3}
+      propertyPath: _brokenMiniGame.CanBeBroke
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6789041258257831890, guid: f91b88110c0134e38aaec3c0e6a6e88c,
+        type: 3}
+      propertyPath: _brokenMiniGame.BrokenMiniGameScript
+      value: 
+      objectReference: {fileID: 1189150368}
+    - target: {fileID: 6789041258257831890, guid: f91b88110c0134e38aaec3c0e6a6e88c,
+        type: 3}
+      propertyPath: _brokenMiniGame.CharPos
+      value: 
+      objectReference: {fileID: 982875623}
+    - target: {fileID: 6789041258257831890, guid: f91b88110c0134e38aaec3c0e6a6e88c,
+        type: 3}
+      propertyPath: _brokenMiniGame.CharExitMiniGamePos
+      value: 
+      objectReference: {fileID: 982875623}
+    - target: {fileID: 6789041258257831890, guid: f91b88110c0134e38aaec3c0e6a6e88c,
+        type: 3}
+      propertyPath: _brokenMiniGame.CharFacingRight
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f91b88110c0134e38aaec3c0e6a6e88c, type: 3}
 --- !u!4 &1189150364 stripped
@@ -2349,6 +2377,9 @@ MonoBehaviour:
     BrokenMiniGameScript: {fileID: 0}
     minBrokenTime: 0
     maxBrokenTime: 0
+    CharPos: {fileID: 0}
+    CharExitMiniGamePos: {fileID: 0}
+    CharFacingRight: 0
   isDogPoop: 0
 --- !u!1001 &1301737673
 PrefabInstance:
@@ -4034,6 +4065,9 @@ MonoBehaviour:
     BrokenMiniGameScript: {fileID: 0}
     minBrokenTime: 0
     maxBrokenTime: 0
+    CharPos: {fileID: 0}
+    CharExitMiniGamePos: {fileID: 0}
+    CharFacingRight: 0
   isDogPoop: 0
 --- !u!1 &1970853907
 GameObject:
@@ -4292,6 +4326,16 @@ PrefabInstance:
       propertyPath: ApplicableCharacters.Array.data[2]
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 8243336854724505431, guid: 1101e4dc1bb444d4999a64034faf8daa,
+        type: 3}
+      propertyPath: _brokenMiniGame.CharPos
+      value: 
+      objectReference: {fileID: 2043659993}
+    - target: {fileID: 8243336854724505431, guid: 1101e4dc1bb444d4999a64034faf8daa,
+        type: 3}
+      propertyPath: _brokenMiniGame.CharExitMiniGamePos
+      value: 
+      objectReference: {fileID: 2043659993}
     - target: {fileID: 6547498994531028245, guid: 1101e4dc1bb444d4999a64034faf8daa,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4354,6 +4398,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1101e4dc1bb444d4999a64034faf8daa, type: 3}
+--- !u!4 &2043659993 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6547498994531028245, guid: 1101e4dc1bb444d4999a64034faf8daa,
+    type: 3}
+  m_PrefabInstance: {fileID: 2043659992}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2087241074 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 616542332617970627, guid: 6003bf1086e33fe469dd486262efc4aa,
@@ -4553,6 +4603,16 @@ PrefabInstance:
       propertyPath: ApplicableCharacters.Array.size
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 616542332617970632, guid: 6003bf1086e33fe469dd486262efc4aa,
+        type: 3}
+      propertyPath: _brokenMiniGame.CharPos
+      value: 
+      objectReference: {fileID: 616542333491975858}
+    - target: {fileID: 616542332617970632, guid: 6003bf1086e33fe469dd486262efc4aa,
+        type: 3}
+      propertyPath: _brokenMiniGame.CharExitMiniGamePos
+      value: 
+      objectReference: {fileID: 616542333491975858}
     - target: {fileID: 616542332617970630, guid: 6003bf1086e33fe469dd486262efc4aa,
         type: 3}
       propertyPath: buttonsPattern.Array.size
@@ -4565,6 +4625,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6003bf1086e33fe469dd486262efc4aa, type: 3}
+--- !u!4 &616542333491975858 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 616542332346445065, guid: 6003bf1086e33fe469dd486262efc4aa,
+    type: 3}
+  m_PrefabInstance: {fileID: 616542333491975857}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6752346005759753438
 PrefabInstance:
   m_ObjectHideFlags: 0

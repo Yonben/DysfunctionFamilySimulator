@@ -16,7 +16,7 @@ public class ActionableObject : MonoBehaviour
     private Animator _animator;
     
     [System.Serializable]
-    struct BrokenMiniGame
+    internal struct BrokenMiniGame
     {
         public bool CanBeBroke;
         public MiniGame BrokenMiniGameScript;
@@ -24,6 +24,10 @@ public class ActionableObject : MonoBehaviour
         public int maxBrokenTime;
 //        public PlayableCharacter dad;
 //        public Sprite needIcon;
+        
+        public Transform CharPos;
+        public Transform CharExitMiniGamePos;
+        public bool CharFacingRight;
     }
     
     public bool isExplicit;
@@ -85,7 +89,7 @@ public class ActionableObject : MonoBehaviour
 //    private IndependentPenaltyBehviour _independentPenaltyBehviour;
 
 
-    [SerializeField] private BrokenMiniGame _brokenMiniGame;
+    [SerializeField] internal BrokenMiniGame _brokenMiniGame;
 
     [SerializeField] private bool isDogPoop = false;
 
@@ -250,14 +254,30 @@ public class ActionableObject : MonoBehaviour
         else if (XCI.GetButtonDown(XboxButton.A, playableCharacter.PlayerController.controller) && playableCharacter.isAlive)
         {
             PatternButtonAnim.SetTrigger("white");
-            if (CharPos)
+            if (isBroken)
             {
+                if (_brokenMiniGame.CharPos)
+                {
 //                if (!miniGameToEnter.desapireInEnter)
-                playableCharacter.disableMovement(playerMoveInFixPos);
-                playableCharacter.transform.position = CharPos.position;
-                playableCharacter.PlayerController.isRight = CharFacingRight;
-                stickTime = Time.fixedTime;
+                    playableCharacter.disableMovement(playerMoveInFixPos);
+                    playableCharacter.transform.position = _brokenMiniGame.CharPos.position;
+                    playableCharacter.PlayerController.isRight = _brokenMiniGame.CharFacingRight;
+                    stickTime = Time.fixedTime;
+                }
             }
+            else
+            {
+                if (CharPos)
+                {
+//                if (!miniGameToEnter.desapireInEnter)
+                    playableCharacter.disableMovement(playerMoveInFixPos);
+                    playableCharacter.transform.position = CharPos.position;
+                    playableCharacter.PlayerController.isRight = CharFacingRight;
+                    stickTime = Time.fixedTime;
+                }
+            }
+            
+            
 
             state = State.MINIGAME;
             miniGameToEnter.StartMiniGame(this, playableCharacter);
