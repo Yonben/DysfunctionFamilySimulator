@@ -112,6 +112,18 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &15352673 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1098302914995998834, guid: adb11c4a6cc9d18479cbccca90be7d84,
+    type: 3}
+  m_PrefabInstance: {fileID: 1873119267}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 014124e2bbc4d424d91882ea62a0a760, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &55152553
 GameObject:
   m_ObjectHideFlags: 0
@@ -416,6 +428,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 1
+--- !u!114 &229505827 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2611524468903020580, guid: 4f4139a1115877a43ac8f74ab441b2f5,
+    type: 3}
+  m_PrefabInstance: {fileID: 130116316}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 014124e2bbc4d424d91882ea62a0a760, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &245978905 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1927244722928950020, guid: dc5661be747ae7a44853a52754e99fdb,
@@ -516,6 +540,7 @@ GameObject:
   - component: {fileID: 411561244}
   - component: {fileID: 411561245}
   - component: {fileID: 411561246}
+  - component: {fileID: 411561247}
   m_Layer: 0
   m_Name: Baby Cradle
   m_TagString: Untagged
@@ -689,7 +714,8 @@ MonoBehaviour:
   CharPos: {fileID: 1475074581}
   CharExitMiniGamePos: {fileID: 0}
   CharFacingRight: 1
-  ApplicableCharacters: 01000000
+  ApplicableCharacters: 
+  fromIdleToReadyStateAnimation: cry
   MiniGameScript: {fileID: 411561246}
   removeAllPlayer: 0
   _brokenMiniGame:
@@ -712,11 +738,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   desapireInEnter: 0
   objectAnimationEnter: treat
-  objectAnimationExit: cry
+  objectAnimationExit: idle
   playerAnimationEnter: baby
   playerAnimationExit: nobaby
   objectAnimationEntered: 0
   playerAnimationEntered: 0
+  player: {fileID: 0}
   inMiniGame: 0
   buttonsPattern: 030000000100000000000000020000000300000001000000000000000200000003000000010000000000000002000000
   isRandom: 0
@@ -724,6 +751,29 @@ MonoBehaviour:
   infiniteStepsNumber: 0
   t: {fileID: 0}
   scoreToAdd: 0
+--- !u!114 &411561247
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 411561239}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78bad2c5985283542bbf4eef505e7d34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  players:
+  - {fileID: 245978905}
+  - {fileID: 15352673}
+  - {fileID: 229505827}
+  penalty: 1
+  penaltyTimeRate: 3
+  needIcon: {fileID: 21300006, guid: 437840cd86e4eb34abc6855fff002477, type: 3}
+  player: {fileID: 15352673}
+  maxTimeToCry: 6
+  minTimeToCry: 3
+  _actionableObject: {fileID: 411561245}
 --- !u!1 &434041534
 GameObject:
   m_ObjectHideFlags: 0
@@ -1543,6 +1593,7 @@ MonoBehaviour:
   playerAnimationExit: stopfix
   objectAnimationEntered: 0
   playerAnimationEntered: 0
+  player: {fileID: 0}
   inMiniGame: 0
   buttonsPattern: 
   isRandom: 1
@@ -1975,6 +2026,7 @@ MonoBehaviour:
   playerAnimationExit: stopfix
   objectAnimationEntered: 0
   playerAnimationEntered: 0
+  player: {fileID: 0}
   inMiniGame: 0
   buttonsPattern: 
   isRandom: 1
@@ -2257,6 +2309,7 @@ MonoBehaviour:
   playerAnimationExit: 
   objectAnimationEntered: 0
   playerAnimationEntered: 0
+  player: {fileID: 0}
   inMiniGame: 0
   buttonsPattern: 01000000010000000100000001000000010000000100000001000000010000000100000001000000
   isRandom: 0
@@ -2288,6 +2341,7 @@ MonoBehaviour:
   CharExitMiniGamePos: {fileID: 1497456359}
   CharFacingRight: 0
   ApplicableCharacters: 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  fromIdleToReadyStateAnimation: 
   MiniGameScript: {fileID: 1242787523}
   removeAllPlayer: 0
   _brokenMiniGame:
@@ -3940,6 +3994,7 @@ MonoBehaviour:
   playerAnimationExit: nosmoke
   objectAnimationEntered: 0
   playerAnimationEntered: 0
+  player: {fileID: 0}
   inMiniGame: 0
   buttonsPattern: 02000000020000000200000002000000020000000200000002000000020000000200000002000000
   isRandom: 0
@@ -3971,6 +4026,7 @@ MonoBehaviour:
   CharExitMiniGamePos: {fileID: 0}
   CharFacingRight: 1
   ApplicableCharacters: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+  fromIdleToReadyStateAnimation: 
   MiniGameScript: {fileID: 1969727453}
   removeAllPlayer: 0
   _brokenMiniGame:
